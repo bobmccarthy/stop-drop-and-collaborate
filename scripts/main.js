@@ -1,26 +1,42 @@
 'use strict';
-var $ = require ('jquery');
+
+
+// page.navigate('home')
+
+
 var Backbone = require ('backbone');
+var $ = require ('jquery');
+
+
+
 var Router = Backbone.Router.extend({
 	routes: {
-		' home' : 'goHome',
-		'musicians' : 'goMusicians',
-},
-
-
-	goHome: function( ) {
-		$('#musiciansPage').hide( );
-		$('#homePage').show( );
+		'' : 'goHome',
+		'musicians' : 'goMusicians'
 	},
 
-	goMusicians: function ( ) {
-		$('#homePage').hide( );
-		$('#musiciansPage').show( );
+
+	goHome: function() {
+		$('section').hide();
+		$('#homePage').show();
+	},
+
+	goMusicians: function () {
+		$('section').hide();
+		$('#musiciansPage').show();
 	}
 
+});
 
-	
-})
+var page = new Router ();
+Backbone.history.start();
 
-var page = new Router ( );
-Backbone.history.start( );
+
+
+
+
+
+
+
+
+
