@@ -12661,21 +12661,25 @@ return jQuery;
 
 },{}],4:[function(require,module,exports){
 'use strict';
-var $ = require('jquery');
+
+// page.navigate('home')
+
 var Backbone = require('backbone');
+var $ = require('jquery');
+
 var Router = Backbone.Router.extend({
 	routes: {
-		' home': 'goHome',
+		'': 'goHome',
 		'musicians': 'goMusicians'
 	},
 
 	goHome: function goHome() {
-		$('#musiciansPage').hide();
+		$('section').hide();
 		$('#homePage').show();
 	},
 
 	goMusicians: function goMusicians() {
-		$('#homePage').hide();
+		$('section').hide();
 		$('#musiciansPage').show();
 	}
 
