@@ -1,3 +1,36 @@
+
+.guitarBoy {
+	background-image: url('/images/roughDraftGuitarBoy.jpg');
+	text-align: center;
+	background-size: cover;
+	h1{
+		padding:2em 0;
+		color:white;
+		font-size: 4em;
+		font-family: "museo";
+	}
+	
+}
+
+.coupleSunset{
+	background-image: url('/images/roughDraftCoupleSunset.jpg');
+	background-size: cover;
+	.collabText{
+		padding-top:4em;
+		color:black;
+		font-size: 2em;
+
+	}
+}
+
+.guitarDingus{
+	background-image: url('/images/roughDraftGuirtarBoyRockingSideBurns.jpg');
+	background-size: cover;
+	padding:4em 0;
+}
+
+
+
 #logIn{
 	padding-top: 7em;
 	position: fixed;
@@ -55,3 +88,4 @@
 #cancelNewAccount{
 	
 }
+
