@@ -12686,6 +12686,7 @@ $(document).ready(function () {
 	var $name = $('#name');
 	var $instrument = $('#instrument');
 	var $email = $('#email');
+	// var $cancelButton= $('.cancelButton')
 
 	var newMusician = new musicianCollection();
 
@@ -12726,11 +12727,13 @@ $(document).ready(function () {
 		},
 		findUser: function findUser() {
 			$('section').hide();
-			$('#logIn').show();
+			$('#homePage').show();
+			$('#logIn').toggle('slow');
 		},
 		addUserScreen: function addUserScreen() {
 			$('section').hide();
-			$('#newAccount').show();
+			$('#homePage').show();
+			$('#newAccount').toggle('slow');
 		}
 
 	});
