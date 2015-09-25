@@ -7,5 +7,6 @@ module.exports = Backbone.Model.extend({
 		instrument: '',
 		email: ''
 	},
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/groupProject'
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/groupProject',
+	idAttribute: '_id'
 })
