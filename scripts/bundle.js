@@ -12662,33 +12662,131 @@ return jQuery;
 },{}],4:[function(require,module,exports){
 'use strict';
 
-// page.navigate('home')
-
 var Backbone = require('backbone');
-var $ = require('jquery');
 
-var Router = Backbone.Router.extend({
-	routes: {
-		'': 'goHome',
-		'musicians': 'goMusicians'
-	},
+var musicianModel = require('../models/musician-model.js');
 
-	goHome: function goHome() {
-		$('section').hide();
-		$('#homePage').show();
-	},
-
-	goMusicians: function goMusicians() {
-		$('section').hide();
-		$('#musiciansPage').show();
-	}
+module.exports = Backbone.Collection.extend({
+	model: musicianModel,
+	url: 'http://tiyfe.herokuapp.com/collections/groupProject'
 
 });
 
-var page = new Router();
-Backbone.history.start();
+},{"../models/musician-model.js":6,"backbone":1}],5:[function(require,module,exports){
+'use strict';
+var $ = require('jquery');
+var Backbone = require('backbone');
+var musicianView = require('./views/musicianView.js');
+var musicianCollection = require('./collections/musician-collection.js');
+var musicianModel = require('./models/musician-model.js');
 
-},{"backbone":1,"jquery":3}]},{},[4])
+$(document).ready(function () {
+
+	var addUser = $('#addUser');
+	var $name = $('#name');
+	var $instrument = $('#instrument');
+	var $email = $('#email');
+
+	var newMusician = new musicianCollection();
+
+	addUser.on('submit', function (e) {
+		e.preventDefault();
+		newMusician.create({
+			name: $name.val(),
+			instrument: $instrument.val(),
+			email: $email.val()
+		});
+	});
+
+	newMusician.on('add', function (newUser) {
+		// newUser.save();
+		var user1 = new musicianView({ model: newUser });
+		console.log('add workd');
+		$('#musiciansP').append(user1.$el);
+	});
+
+	newMusician.fetch();
+
+	var Router = Backbone.Router.extend({
+		routes: {
+			'': 'goHome',
+			'musicians': 'goMusicians'
+		},
+
+		goHome: function goHome() {
+			$('section').hide();
+			$('#homePage').show();
+		},
+
+		goMusicians: function goMusicians() {
+			$('section').hide();
+			$('#musiciansPage').show();
+		}
+
+	});
+
+	var page = new Router();
+	Backbone.history.start();
+});
+
+},{"./collections/musician-collection.js":4,"./models/musician-model.js":6,"./views/musicianView.js":7,"backbone":1,"jquery":3}],6:[function(require,module,exports){
+'use strict';
+var Backbone = require('backbone');
+
+module.exports = Backbone.Model.extend({
+	defaults: {
+		name: '',
+		instrument: '',
+		email: ''
+	},
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/groupProject',
+	idAttribute: '_id'
+});
+
+},{"backbone":1}],7:[function(require,module,exports){
+'use strict';
+
+var Backbone = require('backbone');
+var _ = require('backbone/node_modules/underscore');
+var musicianModel = require('../models/musician-model.js');
+
+module.exports = Backbone.View.extend({
+	tagName: 'section',
+	initialize: function initialize() {
+
+		console.log('I made it to initialize');
+
+		_.bindAll(this, 'render');
+		this.model.on('change', this.render);
+		// this.$el.on('click', this.onChangeUser);
+		this.render();
+	},
+	render: function render() {
+		console.log('renderssssss');
+		var userName = this.model.get('name');
+		var userInstrument = this.model.get('instrument');
+		var userEmail = this.model.get('email');
+		this.$el.html('<span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
+	}
+	// onChangeUser: function(){
+	// 	if (this.model.get('complete') !== false){
+	// 		this.$el.css('text-decoration', 'line-through');
+	// 		this.model.set({complete: true});
+	// 	}
+	// 	else{
+	// 		this.$el.css('text-decoration', 'none');
+	// 		this.model.set({complete: false});
+	// 	}
+
+	// },
+	// timeStamp: function(){
+
+	// 	var since=moment(date).fromNow()
+
+	// }
+});
+
+},{"../models/musician-model.js":6,"backbone":1,"backbone/node_modules/underscore":2}]},{},[5])
 
 
 //# sourceMappingURL=bundle.js.map
