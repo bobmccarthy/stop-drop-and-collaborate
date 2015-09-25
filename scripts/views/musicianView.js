@@ -25,7 +25,7 @@ module.exports=Backbone.View.extend({
 		var userName = this.model.get('name');
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('email');
-		this.$el.html('<span>'+userName+'</span><span>'+userInstrument+'</span><span>'+userEmail+'</span>');
+		this.$el.html('<span>*'+userName+' </span><span>*'+userInstrument+' </span><span>*'+userEmail+'</span>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){

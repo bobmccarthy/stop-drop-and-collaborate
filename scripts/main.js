@@ -39,19 +39,29 @@ $(document).ready(function(){
 var Router = Backbone.Router.extend({
 	routes: {
 		'' : 'goHome',
-		'musicians' : 'goMusicians'
+		'musicians' : 'goMusicians',
+		'users': 'makeNewUser'
 	},
 
 
 	goHome: function() {
-		$('section').hide();
+		$('#musiciansPage').hide();
 		$('#homePage').show();
+		$('#userProfiles').hide();
 	},
 
 	goMusicians: function () {
-		$('section').hide();
+		$('#homePage').hide();
 		$('#musiciansPage').show();
+		$('#userProfiles').hide();
+	},
+
+	makeNewUser: function() {
+		$('#homePage').hide();
+		$('#musiciansPage').hide();
+		$('#userProfiles').show();
 	}
+
 
 });
 
