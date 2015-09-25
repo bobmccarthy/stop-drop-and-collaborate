@@ -12710,17 +12710,26 @@ $(document).ready(function () {
 	var Router = Backbone.Router.extend({
 		routes: {
 			'': 'goHome',
-			'musicians': 'goMusicians'
+			'musicians': 'goMusicians',
+			'users': 'makeNewUser'
 		},
 
 		goHome: function goHome() {
-			$('section').hide();
+			$('#musiciansPage').hide();
 			$('#homePage').show();
+			$('#userProfiles').hide();
 		},
 
 		goMusicians: function goMusicians() {
-			$('section').hide();
+			$('#homePage').hide();
 			$('#musiciansPage').show();
+			$('#userProfiles').hide();
+		},
+
+		makeNewUser: function makeNewUser() {
+			$('#homePage').hide();
+			$('#musiciansPage').hide();
+			$('#userProfiles').show();
 		}
 
 	});
@@ -12766,7 +12775,7 @@ module.exports = Backbone.View.extend({
 		var userName = this.model.get('name');
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('email');
-		this.$el.html('<span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
+		this.$el.html('<span>*' + userName + ' </span><span>*' + userInstrument + ' </span><span>*' + userEmail + '</span>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){
