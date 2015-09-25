@@ -1,3 +1,4 @@
+
 .guitarBoy {
 	background-image: url('/images/roughDraftGuitarBoy.jpg');
 	text-align: center;
@@ -29,4 +30,62 @@
 }
 
 
+
+#logIn{
+	padding-top: 7em;
+	position: fixed;
+	margin-top:-4em;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(45, 40, 40, 0.6);
+	text-align: center;
+	position: fixed;
+}
+#logInForm{
+	font-size: 2em;
+	padding: 1em 0;
+	color: white;
+	border: 3px solid green;
+	background-color: red;
+	margin: 0 20%;
+	>div > p{
+		margin: 0;
+	}
+	>.noAcc{
+		font-size: .5em;
+	}
+	>button{
+		margin: 1em 0;
+	}
+	>.logInButton{
+		height: 3em;
+	}
+	>a{
+		width: 2em;
+		font-size: .5em;
+		background-color: grey;
+		border: 2px solid black;
+	}
+}
+#newAccount{
+	padding-top: 7em;
+	position: fixed;
+	margin-top:-4em;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(45, 40, 40, 0.6);
+	text-align: center;
+	position: fixed;
+}
+#addUser{
+	// font-size: 2em;
+	padding: 1em 0;
+	color: white;
+	border: 3px solid green;
+	background-color: red;
+	margin: 1em 20%;
+}
+#cancelNewAccount{
+	
+}
 
