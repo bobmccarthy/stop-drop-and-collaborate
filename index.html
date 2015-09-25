@@ -25,9 +25,13 @@
 
 <section id="logIn">
 	<form id="logInForm">
-		<input type="text" placeholder="username">
-		<input type="password" placeholder="password">
-		<p>No Account? <a href="#addUser">Sign Up</a></p>
+		<div><p>Username</p></div>
+		<div><input type="text" placeholder="username"></div>
+		<div><p>Password</p></div>
+		<div><input type="password" placeholder="password"></div>
+		<button class="logInButton">Log In</button>
+		<p class="noAcc">No Account? <a href="#addUser">Sign Up</a></p>
+		<a href="#">Cancel</a>
 	</form>
 </section>
 
@@ -37,6 +41,7 @@
 		<input id="instrument" type="text" placeholder="Enter Instrument">
 		<input id="email" type="text" placeholder="Enter email">
 		<button>addUser</button>
+		<a id="cancelNewAcc" href="#">Cancel</a>
 	</form>
 </section>
 
