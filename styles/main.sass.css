@@ -1,0 +1,17 @@
+.guitarBoy {
+  background-image: url("/images/roughDraftGuitarBoy.jpg");
+  text-align: center;
+  background-size: cover; }
+  .guitarBoy > div {
+    padding: 2em 0;
+    color: white;
+    font-size: 4em;
+    font-family: sans-serif; }
+
+.coupleSunset {
+  background-image: url("/images/roughDraftCoupleSunset.jpg");
+  background-size: cover; }
+  .coupleSunset .collabText {
+    padding-top: 4em;
+    color: black;
+    font-size: 2em; }
