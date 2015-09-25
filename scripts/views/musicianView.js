@@ -6,12 +6,10 @@ var musicianModel = require('../models/musician-model.js');
 
 
 module.exports=Backbone.View.extend({
-	tagName: 'section',
+	tagName: 'div',
 	initialize: function(){
 		
-		console.log('I made it to initialize');
-
-
+		// console.log('I made it to initialize');
 		_.bindAll(
 			this,
 			'render'
@@ -21,11 +19,16 @@ module.exports=Backbone.View.extend({
 		this.render();
 	},
 	render: function(){
-		console.log('renderssssss');
+		
+		
 		var userName = this.model.get('name');
-		var userInstrument = this.model.get('instrument');
-		var userEmail = this.model.get('email');
-		this.$el.html('<span>*'+userName+' </span><span>*'+userInstrument+' </span><span>*'+userEmail+'</span>');
+		console.log(userName);
+		var userInstrument = this.model.get('instrument_id');
+		console.log(userInstrument);
+		var userEmail = this.model.get('contact');
+		console.log(userEmail);
+		this.$el.html('<span>'+userName+' </span><span>'+userInstrument+'</span><span>'+userEmail+'</span>');
+		
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){

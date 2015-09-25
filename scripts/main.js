@@ -19,8 +19,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument: $instrument.val(),
-			email: $email.val()
+			instrument_id: $instrument.val(),
+			contact: $email.val()
 		});		
 
 	});
@@ -28,7 +28,7 @@ $(document).ready(function(){
 	newMusician.on('add', function(newUser){
 		// newUser.save();
 		var user1= new musicianView({model: newUser});
-		console.log('add workd');
+		// console.log('add workd');
 		$('#musiciansP').append(user1.$el);
 	})
 
@@ -36,37 +36,38 @@ $(document).ready(function(){
 
 
 
-var Router = Backbone.Router.extend({
-	routes: {
-		'' : 'goHome',
-		'musicians' : 'goMusicians',
-		'users': 'makeNewUser'
-	},
+	var Router = Backbone.Router.extend({
+		routes: {
+			'' : 'goHome',
+			'account': 'findUser',
+			'musicians' : 'goMusicians',
+			'addUser': 'addUserScreen'
+		},
 
 
-	goHome: function() {
-		$('#musiciansPage').hide();
-		$('#homePage').show();
-		$('#userProfiles').hide();
-	},
+		goHome: function() {
+			$('section').hide();
+			$('#homePage').show();
+		},
 
-	goMusicians: function () {
-		$('#homePage').hide();
-		$('#musiciansPage').show();
-		$('#userProfiles').hide();
-	},
+		goMusicians: function () {
+			$('section').hide();
+			$('#musiciansPage').show();
+		},
+		findUser: function() {
+			$('section').hide();
+			$('#logIn').show();
+		},
+		addUserScreen: function(){
+			$('section').hide();
+			$('#newAccount').show();
+		}
 
-	makeNewUser: function() {
-		$('#homePage').hide();
-		$('#musiciansPage').hide();
-		$('#userProfiles').show();
-	}
 
+	});
 
-});
-
-var page = new Router ();
-Backbone.history.start();
+	var page = new Router ();
+	Backbone.history.start();
 
 
 

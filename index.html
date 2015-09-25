@@ -5,24 +5,39 @@
 	<link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
 </head>
 <body>
-<a href="#">Home</a>
-<a href="#users">users</a>
-	
-<a href="#musicians">Musicians</a>
 
-<section id="homePage">HOME STUFF</section>
+<a href="#">Home</a>
+<a href="#account">Account</a>
 	
-<section id="musiciansPage">Musician Stuff
-<section id="musiciansP">Musician Stuff</section>
+<section id="homePage">
+	<div>HOME PAGE WITH ALL OUR PRETTY STUFF</div>
+	<button><a href="#musicians">Musicians</a></button>
 </section>
 
-<section id="userProfiles">
-<form id="addUser">
-	<input id="name" type="text">
-	<input id="instrument" type="text">
-	<input id="email" type="text">
-	<button>addUser</button>
-</form>
+
+
+<section id="musiciansPage">
+	<p>Hello Musicians</p>
+	<div id="musiciansP"></div>
+</section>
+
+
+
+<section id="logIn">
+	<form id="logInForm">
+		<input type="text" placeholder="username">
+		<input type="password" placeholder="password">
+		<p>No Account? <a href="#addUser">Sign Up</a></p>
+	</form>
+</section>
+
+<section id="newAccount">
+	<form id="addUser">
+		<input id="name" type="text" placeholder="Enter Username">
+		<input id="instrument" type="text" placeholder="Enter Instrument">
+		<input id="email" type="text" placeholder="Enter email">
+		<button>addUser</button>
+	</form>
 </section>
 
 

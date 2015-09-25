@@ -12668,7 +12668,7 @@ var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.Collection.extend({
 	model: musicianModel,
-	url: 'http://tiyfe.herokuapp.com/collections/groupProject'
+	url: 'https://skills-up.herokuapp.com/musicians'
 
 });
 
@@ -12693,15 +12693,15 @@ $(document).ready(function () {
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument: $instrument.val(),
-			email: $email.val()
+			instrument_id: $instrument.val(),
+			contact: $email.val()
 		});
 	});
 
 	newMusician.on('add', function (newUser) {
 		// newUser.save();
 		var user1 = new musicianView({ model: newUser });
-		console.log('add workd');
+		// console.log('add workd');
 		$('#musiciansP').append(user1.$el);
 	});
 
@@ -12710,26 +12710,27 @@ $(document).ready(function () {
 	var Router = Backbone.Router.extend({
 		routes: {
 			'': 'goHome',
+			'account': 'findUser',
 			'musicians': 'goMusicians',
-			'users': 'makeNewUser'
+			'addUser': 'addUserScreen'
 		},
 
 		goHome: function goHome() {
-			$('#musiciansPage').hide();
+			$('section').hide();
 			$('#homePage').show();
-			$('#userProfiles').hide();
 		},
 
 		goMusicians: function goMusicians() {
-			$('#homePage').hide();
+			$('section').hide();
 			$('#musiciansPage').show();
-			$('#userProfiles').hide();
 		},
-
-		makeNewUser: function makeNewUser() {
-			$('#homePage').hide();
-			$('#musiciansPage').hide();
-			$('#userProfiles').show();
+		findUser: function findUser() {
+			$('section').hide();
+			$('#logIn').show();
+		},
+		addUserScreen: function addUserScreen() {
+			$('section').hide();
+			$('#newAccount').show();
 		}
 
 	});
@@ -12745,11 +12746,11 @@ var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults: {
 		name: '',
-		instrument: '',
-		email: ''
+		instrument_id: '',
+		contact: ''
 	},
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/groupProject',
-	idAttribute: '_id'
+	urlRoot: 'https://skills-up.herokuapp.com/musicians',
+	idAttribute: 'id'
 });
 
 },{"backbone":1}],7:[function(require,module,exports){
@@ -12760,22 +12761,24 @@ var _ = require('backbone/node_modules/underscore');
 var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.View.extend({
-	tagName: 'section',
+	tagName: 'div',
 	initialize: function initialize() {
 
-		console.log('I made it to initialize');
-
+		// console.log('I made it to initialize');
 		_.bindAll(this, 'render');
 		this.model.on('change', this.render);
 		// this.$el.on('click', this.onChangeUser);
 		this.render();
 	},
 	render: function render() {
-		console.log('renderssssss');
+
 		var userName = this.model.get('name');
-		var userInstrument = this.model.get('instrument');
-		var userEmail = this.model.get('email');
-		this.$el.html('<span>*' + userName + ' </span><span>*' + userInstrument + ' </span><span>*' + userEmail + '</span>');
+		console.log(userName);
+		var userInstrument = this.model.get('instrument_id');
+		console.log(userInstrument);
+		var userEmail = this.model.get('contact');
+		console.log(userEmail);
+		this.$el.html('<span>' + userName + ' </span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){
