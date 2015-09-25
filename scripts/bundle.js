@@ -12662,10 +12662,38 @@ return jQuery;
 },{}],4:[function(require,module,exports){
 'use strict';
 
-// page.navigate('home')
-
 var Backbone = require('backbone');
+
+var musicianModel = require('../models/musician-model.js');
+
+module.exports = Backbone.Collection.extend({
+	model: musicianModel,
+	url: 'http://tiyfe.herokuapp.com/collections/groupProject'
+
+});
+
+},{"../models/musician-model.js":6,"backbone":1}],5:[function(require,module,exports){
+'use strict';
 var $ = require('jquery');
+var Backbone = require('backbone');
+
+var musicianCollection = require('./collections/musician-collection.js');
+var musicianModel = require('./models/musician-model.js');
+
+var newMusician = new musicianCollection();
+newMusician.add({
+	name: 'Bob',
+	instrument: 'guitar',
+	email: 'bob@gmail.com'
+});
+var newMusicia = new musicianCollection();
+newMusicia.add({
+	name: 'Jim',
+	instrument: 'guitar',
+	email: 'jim@gmail.com'
+});
+console.log(newMusician);
+console.log(newMusicia);
 
 var Router = Backbone.Router.extend({
 	routes: {
@@ -12688,7 +12716,20 @@ var Router = Backbone.Router.extend({
 var page = new Router();
 Backbone.history.start();
 
-},{"backbone":1,"jquery":3}]},{},[4])
+},{"./collections/musician-collection.js":4,"./models/musician-model.js":6,"backbone":1,"jquery":3}],6:[function(require,module,exports){
+'use strict';
+var Backbone = require('backbone');
+
+module.exports = Backbone.Model.extend({
+	defaults: {
+		name: '',
+		instrument: '',
+		email: ''
+	},
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/groupProject'
+});
+
+},{"backbone":1}]},{},[5])
 
 
 //# sourceMappingURL=bundle.js.map
