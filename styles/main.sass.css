@@ -22,6 +22,7 @@
   padding: 4em 0; }
 
 #logIn {
+  z-index: 900000;
   padding-top: 7em;
   position: fixed;
   margin-top: -4em;

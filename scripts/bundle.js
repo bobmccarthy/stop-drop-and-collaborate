@@ -12694,7 +12694,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument_id: $instrument.val(),
+			instrument_id: 1,
 			contact: $email.val()
 		});
 	});
@@ -12728,12 +12728,12 @@ $(document).ready(function () {
 		findUser: function findUser() {
 			$('section').hide();
 			$('#homePage').show();
-			$('#logIn').toggle('slow');
+			$('#logIn').show();
 		},
 		addUserScreen: function addUserScreen() {
 			$('section').hide();
 			$('#homePage').show();
-			$('#newAccount').toggle('slow');
+			$('#newAccount').show();
 		}
 
 	});
@@ -12764,24 +12764,23 @@ var _ = require('backbone/node_modules/underscore');
 var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.View.extend({
-	tagName: 'div',
+	tagName: 'section',
 	initialize: function initialize() {
 
-		// console.log('I made it to initialize');
+		console.log('I made it to initialize');
+
 		_.bindAll(this, 'render');
 		this.model.on('change', this.render);
 		// this.$el.on('click', this.onChangeUser);
 		this.render();
 	},
 	render: function render() {
-
+		console.log('renderssssss');
 		var userName = this.model.get('name');
-		console.log(userName);
-		var userInstrument = this.model.get('instrument_id');
-		console.log(userInstrument);
+		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
-		console.log(userEmail);
-		this.$el.html('<span>' + userName + ' </span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
+
+		this.$el.html('<span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){

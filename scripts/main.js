@@ -21,7 +21,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument_id: $instrument.val(),
+			instrument_id: 1,
 			contact: $email.val()
 		});		
 
@@ -60,12 +60,12 @@ $(document).ready(function(){
 		findUser: function() {
 			$('section').hide();
 			$('#homePage').show();
-			$('#logIn').toggle('slow');
+			$('#logIn').show();
 		},
 		addUserScreen: function(){
 			$('section').hide();
 			$('#homePage').show();
-			$('#newAccount').toggle('slow');
+			$('#newAccount').show();
 		}
 
 
