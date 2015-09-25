@@ -2,11 +2,11 @@
 	background-image: url('/images/roughDraftGuitarBoy.jpg');
 	text-align: center;
 	background-size: cover;
-	> div {
+	h1{
 		padding:2em 0;
 		color:white;
 		font-size: 4em;
-		font-family: sans-serif;
+		font-family: "museo";
 	}
 	
 }
@@ -20,6 +20,12 @@
 		font-size: 2em;
 
 	}
+}
+
+.guitarDingus{
+	background-image: url('/images/roughDraftGuirtarBoyRockingSideBurns.jpg');
+	background-size: cover;
+	padding:4em 0;
 }
 
 
