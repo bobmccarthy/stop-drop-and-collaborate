@@ -1,5 +1,30 @@
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 
 @media screen and(min-width: 632px) {
-	
+	.coupleSunset {
+		float: left;
+		margin: 0 1% 0 5%;
+		width: 30%;
+	}
+
+	.findCollab {
+		background: none;
+		float: right;
+		padding: 0 5% 0 0;
+		width: 48%;
+
+		p {
+			color: $secondary-color;
+		}
+
+		.findButton {
+			bottom: 0;
+		}
+	}
+
+	.becomeCollab {
+		clear: both;
+		padding: 1em 5%;
+	}
+
 }
