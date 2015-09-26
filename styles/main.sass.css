@@ -104,6 +104,10 @@ blockquote {
   font-style: italic;
   font-weight: 700; }
 
+/* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
+.mixingBoards {
+  display: none; }
+
 .guitarBoy {
   background-image: url("/images/roughDraftGuitarBoy.jpg");
   text-align: center;
@@ -114,7 +118,7 @@ blockquote {
     font-size: 4em;
     font-family: "museo"; }
 
-.guitarBoy, .overview, .collabText, .becomeCollab, .userStories {
+.guitarBoy, .overview, .collabText, .becomeText, .userStories {
   box-sizing: border-box;
   padding: .3em 5%; }
 
@@ -203,21 +207,44 @@ footer {
 
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
-  .coupleSunset {
+  .mixingBoards {
+    display: block; }
+  .coupleSunset, .mixingBoards {
     float: left;
     margin-right: 2%;
     width: 38%; }
-  .collabText {
+  .collabText, .becomeText {
     background: none;
     float: right;
     padding-left: 0;
     width: 60%; }
-    .collabText h2 {
+    .collabText h2, .becomeText h2 {
       padding-top: 0; }
-    .collabText p {
+    .collabText p, .becomeText p {
       color: #1F6C6E; }
-    .collabText .findButton {
+    .collabText .findButton, .becomeText .findButton {
       bottom: 0; }
+  .findCollab {
+    min-height: 18em; }
   .becomeCollab {
-    clear: both;
-    padding: 1em 5%; } }
+    clear: both; }
+  .userStories {
+    clear: both; } }
+
+@media screen and (min-width: 938px) {
+  .guitarBoy {
+    width: 48%;
+    margin: 0; }
+  .overview {
+    float: right;
+    width: 50%; }
+  .coupleSunset, .mixingBoards {
+    width: 48%; }
+  .collabText, .becomeText {
+    width: 50%; }
+    .collabText h2, .becomeText h2 {
+      padding-top: 0; }
+    .collabText p, .becomeText p {
+      color: #1F6C6E; }
+    .collabText .findButton, .becomeText .findButton {
+      bottom: 0; } }

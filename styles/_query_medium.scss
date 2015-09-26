@@ -1,0 +1,31 @@
+@media screen and (min-width: 938px) {
+	.guitarBoy {
+		width: 48%;
+		margin: 0;
+	}
+
+	.overview {
+		float: right;
+		width: 50%;
+	}
+
+	.coupleSunset, .mixingBoards {
+		width: 48%;
+	}
+
+	.collabText, .becomeText {
+		width: 50%;
+
+		h2 {
+			padding-top: 0;
+		}
+
+		p {
+			color: $secondary-color;
+		}
+
+		.findButton {
+			bottom: 0;
+		}
+	}
+}
