@@ -26,6 +26,21 @@ h4, h5, h6, p {
 	font-family: "Museo-sans", sans-serif;
 }
 
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+	padding: .5em 0;
+}
+
+p {
+	font-size: 1em;
+	line-height: 1.25em;
+	padding-bottom: 1.5em;
+}
+
 blockquote {
 	color: $contrast-color;
 	font-family: "museo", sans-serif;
