@@ -6,14 +6,17 @@ var musicianCollection = require('./collections/musician-collection.js');
 var musicianModel= require('./models/musician-model.js');
 
 
-$(document).ready(function(){
+var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
 
+$(document).ready(function(){
+	var $musicianFilter = $('#musicianFilter');
+	var $musicianFilterButton=$('#musicianFilterButton');
 	var addUser = $('#addUser');
 	var $name=$('#name');
 	
 	var $email=$('#email');
-	var dropdownSelection = ('#instrument');
-
+	// var dropdownSelection = ('#instrument');
+	
 
 	var newMusician = new musicianCollection();
 
@@ -21,12 +24,13 @@ $(document).ready(function(){
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument_id: 1,
+			instrument_id: $instrument.val(),
 			contact: $email.val()
 		});		
-		console.log(dropdownSelection.val());
+		
 
 	});
+
 
 	newMusician.on('add', function(newUser){
 		// newUser.save();
@@ -35,7 +39,27 @@ $(document).ready(function(){
 		$('#musiciansP').append(user1.$el);
 	})
 
-	newMusician.fetch();
+	$musicianFilterButton.on('click', function(){
+		$('#musiciansP').html('');
+		console.log($musicianFilter.val().toString());
+		$.get(
+			musicianUrl,
+			function (response){
+				
+				for(var i=0; i<response.length; i++){
+					if (response[i].instrument===$musicianFilter.val()){
+						$('#musiciansP')+$('#musiciansP').append('<div class="entry"><button class="expand">+</button><div><img class="userImage" src="../images/default_usr_icon_sm.png"></div><div><span>'+response[i].name+'</span></div><div><span>'+response[i].instrument+'</span></div><div><span>'+response[i].contact+'</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
+					};
+					// else{
+					// 	$('#musiciansP').append('<p>Could Not Find a musician that plays that instrument.</p>');
+					// }
+				};
+			},
+			'json'
+		)
+	});
+	
+		
 
 
 
@@ -57,13 +81,13 @@ $(document).ready(function(){
 		goMusicians: function () {
 			$('section').hide();
 			$('#musiciansPage').show();
+			newMusician.fetch();
 		},
 		findUser: function() {
 			$('section').hide();
-
 			$('#homePage').show();
 			$('#logIn').toggle('slow');
-			// $('#homePage').css({'z-index': 900});
+			
 			
 		},
 		addUserScreen: function(){
@@ -86,6 +110,21 @@ $(document).ready(function(){
 });
 
 
-
+// $.get(
+// 	usersURL,
+// 	function (response){
+// 		for(var i=0; i<response.length; i++){
+// 			if (response[i].username===username.val()&&response[i].password===password.val()){
+// 				loginBackground.toggle('slow');
+// 				password.val('');
+// 				signinError.html('');
+// 			}
+// 			else{
+// 				signinError.html('Could Not Verify Sign-In, Try Again.');
+// 			}
+// 		};
+// 	},
+// 	'json'
+// );
 
 

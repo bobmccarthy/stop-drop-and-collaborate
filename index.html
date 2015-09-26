@@ -20,6 +20,8 @@
 		<a href="#">Cancel</a>
 	</form>
 </section>
+
+
 <section id="newAccount">
 	<form id="addUser">
 		<input id="name" type="text" placeholder="Enter Username">
@@ -40,46 +42,61 @@
 		<a id="cancelNewAcc" href="#">Cancel</a>
 	</form>
 </section>
-<!-- <main> -->	
+
+
+
 	<nav>
 		<a href="#">Home</a>
 		<a href="#account">Account</a>
 	</nav>
-<section id="homePage">
-	<div class= "guitarBoy">
-	<h1>SkillsUp</h1>
-	</div>
-	<div class="overview">
-		<div>Overview</div>
-		<div>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn.</div>
+	<section id="homePage">
+		<div class= "guitarBoy">
+		<h1>SkillsUp</h1>
+		</div>
+		<div class="overview">
+			<div>Overview</div>
+			<div>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn.</div>
+			</div>
+
+		<div class="coupleSunset">
+			<div>Find Collab</div>
+			<div class= "collabText">Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn</div>
+			<button><a href="#musicians">Musicians</a></button>
 		</div>
 
-	<div class="coupleSunset">
-		<div>Find Collab</div>
-		<div class= "collabText">Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn</div>
-		<button><a href="#musicians">Musicians</a></button>
-	</div>
+		<div class="becomeCollab">
+			<div>Become Collab</div>
+			<div>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn.</div>
+				<!-- <button class ="fakeAddUser">fakeUser</button> -->
+		</div>
 
-	<div class="becomeCollab">
-		<div>Become Collab</div>
-		<div>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn.</div>
-			<!-- <button class ="fakeAddUser">fakeUser</button> -->
-	</div>
+		<div class ="guitarDingus">
+			<div>Collab users stories and qoutes</div>
+		</div>
 
-	<div class ="guitarDingus">
-		<div>Collab users stories and qoutes</div>
-	</div>
+		<div class="footer">
+			<div>skillsup 2015</div>
+		</div>
 
-	<div class="footer">
-		<div>skillsup 2015</div>
-	</div>
-
-</section>
+	</section>
 
 
 
 <section id="musiciansPage">
-
+	<select id="musicianFilter" type="dropdown">
+			<option value="">Select Kind Of Musician</option>
+			<option value="Guitar">Guitar</option>
+			<option value="Drums">Drums</option>
+			<option value="Vocals">Vocals</option>
+			<option value="Bass">Bass</option>
+			<option value="Keys">Keys</option>
+			<option value="Electronic Production">Electronic Production</option>
+			<option value="Gear Rental">Gear Rental</option>
+			<option value="MC">MC</option>
+			<option value="Banjo">Banjo</option>
+			<option value="Harmonica">Harmonica</option>
+	</select> 
+	<button id="musicianFilterButton">Enter</button>
 	<p>Hello Musicians</p>
 	<div id="musiciansP"></div>
 </section>
@@ -89,7 +106,7 @@
 
 
 
-<!-- </main> -->
+
 
 
 <script type="text/javascript" src="/scripts/bundle.js"></script>
