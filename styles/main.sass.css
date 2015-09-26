@@ -1,5 +1,109 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-  margin: 0; }
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* 	GLOBAL STYLES AND VARIABLES ARE LOCATED ON THIS STYLESHEET */
+/* 	
+	***DO NOT CHANGE WITHOUT CONTACTING COREY***
+	EM BASE SETS BASE EM SIZING TO 16PX
+	PRIMARY COLOR: GENERAL USE FOR HEADERS AND TEXT USE
+	SECONDARY COLOR: LINKS AND CONTRASTING ELEMENTS
+	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
+	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
+*/
+h1, h2, h3 {
+  color: #353F4C;
+  font-family: "Museo", sans-serif; }
+
+h4, h5, h6, p {
+  color: #353F4C;
+  font-family: "Museo-sans", sans-serif; }
+
+h1 {
+  font-size: 3em; }
+
+h2 {
+  font-size: 2em;
+  padding: .5em 0; }
+
+p {
+  color: #1F6C6E;
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.25em;
+  padding-bottom: 1.5em; }
+
+a {
+  color: #FF5F49;
+  font-family: "Museo-sans", sans-serif;
+  text-decoration: none; }
+  a:hover {
+    color: #e21b00; }
+
+button {
+  background: none;
+  border: 0.15em solid #1F6C6E;
+  border-radius: .35em;
+  color: #1F6C6E;
+  font-family: "Museo-sans", sans-serif;
+  font-size: 1.75em;
+  font-weight: 700;
+  letter-spacing: -.05em;
+  padding: 0.25em 2em;
+  text-transform: uppercase; }
+
+blockquote {
+  color: #FF5F49;
+  font-family: "Museo", sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  font-weight: 700; }
+
+body {
+  margin: 0 auto; }
 
 .guitarBoy {
   background-image: url("/images/roughDraftGuitarBoy.jpg");
@@ -11,18 +115,37 @@ body {
     font-size: 4em;
     font-family: "museo"; }
 
+.guitarBoy, .overview, .coupleSunset, .findCollab, .becomeCollab, .userStories {
+  border-box: box-sizing;
+  padding: .3em 5%; }
+
 .coupleSunset {
   background-image: url("/images/roughDraftCoupleSunset.jpg");
-  background-size: cover; }
-  .coupleSunset .collabText {
-    padding-top: 4em;
-    color: black;
-    font-size: 2em; }
-
-.guitarDingus {
-  background-image: url("/images/roughDraftGuirtarBoyRockingSideBurns.jpg");
   background-size: cover;
-  padding: 4em 0; }
+  background-position: center;
+  height: 8em;
+  padding-top: 1em; }
+
+.findCollab {
+  background: #120726; }
+  .findCollab p {
+    color: #2a9396; }
+
+.userStories {
+  background: #1F6C6E;
+  padding: 1.5em 1em; }
+  .userStories blockquote {
+    font-size: 2em;
+    margin: .5em 0; }
+  .userStories p {
+    color: #fff;
+    font-size: 1.25em;
+    font-style: italic;
+    text-align: center; }
+  .userStories img {
+    display: block;
+    margin: .75em auto;
+    width: 25%; }
 
 #logIn {
   padding: 7em 0;
@@ -76,10 +199,7 @@ body {
   padding: .5em; }
 
 .userImage {
-  margin-right: 1em;
-  height: 3.5em;
-  float: left; }
+  height: 1em; }
 
-#expand {
-  float: right;
-  margin-top: 1.75em; }
+footer {
+  padding: .3em 5%; }
