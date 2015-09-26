@@ -12668,7 +12668,7 @@ var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.Collection.extend({
 	model: musicianModel,
-	url: 'https://skills-up.herokuapp.com/musicians'
+	url: 'https://skills-up.herokuapp.com/'
 
 });
 
@@ -12684,9 +12684,9 @@ $(document).ready(function () {
 
 	var addUser = $('#addUser');
 	var $name = $('#name');
-	var $instrument = $('#instrument');
+
 	var $email = $('#email');
-	// var $cancelButton= $('.cancelButton')
+	var dropdownSelection = '#instrument';
 
 	var newMusician = new musicianCollection();
 
@@ -12697,6 +12697,7 @@ $(document).ready(function () {
 			instrument_id: 1,
 			contact: $email.val()
 		});
+		console.log(dropdownSelection.val());
 	});
 
 	newMusician.on('add', function (newUser) {
@@ -12729,13 +12730,13 @@ $(document).ready(function () {
 			$('section').hide();
 
 			$('#homePage').show();
-			$('#logIn').show();
+			$('#logIn').toggle('slow');
 			// $('#homePage').css({'z-index': 900});
 		},
 		addUserScreen: function addUserScreen() {
 			$('section').hide();
 			$('#homePage').show();
-			$('#newAccount').show();
+			$('#newAccount').toggle('slow');
 		}
 
 	});
@@ -12754,7 +12755,7 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
-	urlRoot: 'https://skills-up.herokuapp.com/musicians',
+	urlRoot: 'https://skills-up.herokuapp.com/',
 	idAttribute: 'id'
 });
 
@@ -12782,7 +12783,7 @@ module.exports = Backbone.View.extend({
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 
-		this.$el.html('<span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span>');
+		this.$el.html('<div class="entry"><img class="userImage" src="../images/default_usr_icon_sm.png"><span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span></div>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){

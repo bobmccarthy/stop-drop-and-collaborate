@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	
+	<title>SkillsUp</title>
+	<script src="https://use.typekit.net/abx3wpk.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="/styles/main.sass.css">
 
 </head>
@@ -22,7 +23,18 @@
 <section id="newAccount">
 	<form id="addUser">
 		<input id="name" type="text" placeholder="Enter Username">
-		<input id="instrument" type="text" placeholder="Enter Instrument">
+		<select id="instrument" type="dropdown">
+			<option value="1">Guitar</option>
+			<option value="2">Drums</option>
+			<option value="3">Vocals</option>
+			<option value="4">Bass</option>
+			<option value="5">Keys</option>
+			<option value="6">Electronic Production</option>
+			<option value="7">Gear Rental</option>
+			<option value="8">MC</option>
+			<option value="9">Banjo</option>
+			<option value="10">Harmonica</option>
+		</select> 
 		<input id="email" type="text" placeholder="Enter email">
 		<button>addUser</button>
 		<a id="cancelNewAcc" href="#">Cancel</a>
@@ -67,6 +79,7 @@
 
 
 <section id="musiciansPage">
+
 	<p>Hello Musicians</p>
 	<div id="musiciansP"></div>
 </section>

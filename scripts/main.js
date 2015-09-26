@@ -10,9 +10,9 @@ $(document).ready(function(){
 
 	var addUser = $('#addUser');
 	var $name=$('#name');
-	var $instrument=$('#instrument');
+	
 	var $email=$('#email');
-	// var $cancelButton= $('.cancelButton')
+	var dropdownSelection = ('#instrument');
 
 
 	var newMusician = new musicianCollection();
@@ -24,6 +24,7 @@ $(document).ready(function(){
 			instrument_id: 1,
 			contact: $email.val()
 		});		
+		console.log(dropdownSelection.val());
 
 	});
 
@@ -61,14 +62,14 @@ $(document).ready(function(){
 			$('section').hide();
 
 			$('#homePage').show();
-			$('#logIn').show();
+			$('#logIn').toggle('slow');
 			// $('#homePage').css({'z-index': 900});
 			
 		},
 		addUserScreen: function(){
 			$('section').hide();
 			$('#homePage').show();
-			$('#newAccount').show();
+			$('#newAccount').toggle('slow');
 		}
 
 

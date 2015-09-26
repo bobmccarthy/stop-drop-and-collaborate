@@ -26,7 +26,7 @@ module.exports=Backbone.View.extend({
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 		
-		this.$el.html('<span>'+userName+'</span><span>'+userInstrument+'</span><span>'+userEmail+'</span>');
+		this.$el.html('<div class="entry"><img class="userImage" src="../images/default_usr_icon_sm.png"><span>'+userName+'</span><span>'+userInstrument+'</span><span>'+userEmail+'</span></div>');
 	}
 	// onChangeUser: function(){
 	// 	if (this.model.get('complete') !== false){
