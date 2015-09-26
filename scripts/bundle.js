@@ -12727,8 +12727,10 @@ $(document).ready(function () {
 		},
 		findUser: function findUser() {
 			$('section').hide();
+
 			$('#homePage').show();
 			$('#logIn').show();
+			// $('#homePage').css({'z-index': 900});
 		},
 		addUserScreen: function addUserScreen() {
 			$('section').hide();

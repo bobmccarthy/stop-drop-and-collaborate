@@ -32,15 +32,15 @@
 
 
 #logIn{
-	z-index: 900000;
+
 	padding-top: 7em;
-	position: fixed;
-	margin-top:-4em;
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	background-color: rgba(45, 40, 40, 0.6);
 	text-align: center;
-	position: fixed;
+	z-index: 1;
+	// position: fixed;
 }
 #logInForm{
 	font-size: 2em;
@@ -70,23 +70,21 @@
 }
 #newAccount{
 	padding-top: 7em;
-	position: fixed;
+	position: absolute;
 	margin-top:-4em;
 	height: 100%;
 	width: 100%;
 	background-color: rgba(45, 40, 40, 0.6);
 	text-align: center;
-	position: fixed;
+	z-index: 1;
 }
 #addUser{
-	// font-size: 2em;
+
 	padding: 1em 0;
 	color: white;
 	border: 3px solid green;
 	background-color: red;
 	margin: 1em 20%;
 }
-#cancelNewAccount{
-	
-}
+
 

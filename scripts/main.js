@@ -59,8 +59,11 @@ $(document).ready(function(){
 		},
 		findUser: function() {
 			$('section').hide();
+
 			$('#homePage').show();
 			$('#logIn').show();
+			// $('#homePage').css({'z-index': 900});
+			
 		},
 		addUserScreen: function(){
 			$('section').hide();
