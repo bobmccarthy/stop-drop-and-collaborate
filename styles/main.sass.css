@@ -72,13 +72,21 @@ h2 {
 p {
   color: #1F6C6E;
   font-size: 1em;
+  font-weight: 300;
   line-height: 1.25em;
   padding-bottom: 1.5em; }
+
+a {
+  color: #FF5F49;
+  font-family: "Museo-sans", sans-serif;
+  text-decoration: none; }
+  a:hover {
+    color: #e21b00; }
 
 button {
   background: none;
   border: 0.15em solid #1F6C6E;
-  border-radius: .5em;
+  border-radius: .35em;
   color: #1F6C6E;
   font-family: "Museo-sans", sans-serif;
   font-size: 1.75em;
@@ -107,14 +115,21 @@ body {
     font-size: 4em;
     font-family: "museo"; }
 
+.guitarBoy, .overview, .coupleSunset, .findCollab, .becomeCollab, .userStories {
+  border-box: box-sizing;
+  padding: .3em 5%; }
+
 .coupleSunset {
   background-image: url("/images/roughDraftCoupleSunset.jpg");
   background-size: cover;
   background-position: center;
-  height: 10em; }
+  height: 8em;
+  padding-top: 1em; }
 
 .findCollab {
   background: #120726; }
+  .findCollab p {
+    color: #2a9396; }
 
 .userStories {
   background: #1F6C6E;
@@ -185,3 +200,6 @@ body {
 
 .userImage {
   height: 1em; }
+
+footer {
+  padding: .3em 5%; }

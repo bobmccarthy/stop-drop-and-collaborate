@@ -38,14 +38,26 @@ h2 {
 p {
 	color: $secondary-color;
 	font-size: 1em;
+	font-weight: 300;
 	line-height: 1.25em;
 	padding-bottom: 1.5em;
+}
+
+a {
+	color: $contrast-color;
+	font-family: "Museo-sans", sans-serif;
+	text-decoration: none;
+
+	&:hover {
+		color: darken($contrast-color, 20%);
+	}
+
 }
 
 button {
 	background: none;
 	border: .15em solid $secondary-color;
-	border-radius: .5em;
+	border-radius: .35em;
 	color: $secondary-color;
 	font-family: "Museo-sans", sans-serif;
 	font-size: 1.75em;
