@@ -85,7 +85,7 @@ a {
 
 button {
   background: none;
-  border: 0.15em solid #1F6C6E;
+  border: 0.1em solid #1F6C6E;
   border-radius: .35em;
   color: #1F6C6E;
   font-family: "Museo-sans", sans-serif;
@@ -203,3 +203,5 @@ body {
 
 footer {
   padding: .3em 5%; }
+
+/*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
