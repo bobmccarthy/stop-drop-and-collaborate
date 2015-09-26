@@ -1,15 +1,8 @@
-body{
-	margin: 0 auto;
-}
-
-nav {
-
-}
-
 .guitarBoy {
 	background-image: url('/images/roughDraftGuitarBoy.jpg');
 	text-align: center;
 	background-size: cover;
+	
 	h1{
 		padding:2em 0;
 		color:white;
@@ -19,20 +12,16 @@ nav {
 	
 }
 
-.guitarBoy, .overview, .coupleSunset, .findCollab, .becomeCollab, .userStories {
-	border-box: box-sizing;
+.guitarBoy, .overview, .collabText, .becomeCollab, .userStories {
+	box-sizing: border-box;
 	padding: .3em 5%;
 }
 
-.coupleSunset{
-	background-image: url('/images/roughDraftCoupleSunset.jpg');
-	background-size: cover;
-	background-position: center;
-	height: 8em;
-	padding-top: 1em;
+.coupleSunset {
+	width: 100%;
 }
 
-.findCollab {
+.collabText {
 	background: #120726;
 
 	p {
@@ -40,7 +29,7 @@ nav {
 	}
 
 	button {
-		
+		margin-bottom: .5em;
 	}
 }
 

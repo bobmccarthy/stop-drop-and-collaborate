@@ -104,9 +104,6 @@ blockquote {
   font-style: italic;
   font-weight: 700; }
 
-body {
-  margin: 0 auto; }
-
 .guitarBoy {
   background-image: url("/images/roughDraftGuitarBoy.jpg");
   text-align: center;
@@ -117,21 +114,19 @@ body {
     font-size: 4em;
     font-family: "museo"; }
 
-.guitarBoy, .overview, .coupleSunset, .findCollab, .becomeCollab, .userStories {
-  border-box: box-sizing;
+.guitarBoy, .overview, .collabText, .becomeCollab, .userStories {
+  box-sizing: border-box;
   padding: .3em 5%; }
 
 .coupleSunset {
-  background-image: url("/images/roughDraftCoupleSunset.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 8em;
-  padding-top: 1em; }
+  width: 100%; }
 
-.findCollab {
+.collabText {
   background: #120726; }
-  .findCollab p {
+  .collabText p {
     color: #2a9396; }
+  .collabText button {
+    margin-bottom: .5em; }
 
 .userStories {
   background: #1F6C6E;
@@ -210,16 +205,17 @@ footer {
 @media screen and (min-width: 632px) {
   .coupleSunset {
     float: left;
-    margin: 0 1% 0 5%;
-    width: 30%; }
-  .findCollab {
+    margin-right: 2%;
+    width: 38%; }
+  .collabText {
     background: none;
     float: right;
-    padding: 0 5% 0 0;
-    width: 48%; }
-    .findCollab p {
+    width: 60%; }
+    .collabText h2 {
+      padding-top: 0; }
+    .collabText p {
       color: #1F6C6E; }
-    .findCollab .findButton {
+    .collabText .findButton {
       bottom: 0; }
   .becomeCollab {
     clear: both;

@@ -3,15 +3,18 @@
 @media screen and(min-width: 632px) {
 	.coupleSunset {
 		float: left;
-		margin: 0 1% 0 5%;
-		width: 30%;
+		margin-right: 2%;
+		width: 38%;
 	}
 
-	.findCollab {
+	.collabText {
 		background: none;
 		float: right;
-		padding: 0 5% 0 0;
-		width: 48%;
+		width: 60%;
+
+		h2 {
+			padding-top: 0;
+		}
 
 		p {
 			color: $secondary-color;
