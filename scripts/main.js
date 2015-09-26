@@ -39,24 +39,18 @@ $(document).ready(function(){
 		$('#musiciansP').append(user1.$el);
 	})
 
+
 	$musicianFilterButton.on('click', function(){
-		$('#musiciansP').html('');
+		// $('#musiciansP').html('');
 		console.log($musicianFilter.val().toString());
-		$.get(
-			musicianUrl,
-			function (response){
-				
-				for(var i=0; i<response.length; i++){
-					if (response[i].instrument===$musicianFilter.val()){
-						$('#musiciansP')+$('#musiciansP').append('<div class="entry"><button class="expand">+</button><div><img class="userImage" src="../images/default_usr_icon_sm.png"></div><div><span>'+response[i].name+'</span></div><div><span>'+response[i].instrument+'</span></div><div><span>'+response[i].contact+'</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
-					};
-					// else{
-					// 	$('#musiciansP').append('<p>Could Not Find a musician that plays that instrument.</p>');
-					// }
-				};
-			},
-			'json'
-		)
+		if ($musicianFilter.val().toString()===''){
+			$('.entry').show();
+		}
+		else{
+			$('.entry').hide();
+			$('.'+$musicianFilter.val().toString()+'').show();
+		}
+		
 	});
 	
 		
@@ -110,21 +104,6 @@ $(document).ready(function(){
 });
 
 
-// $.get(
-// 	usersURL,
-// 	function (response){
-// 		for(var i=0; i<response.length; i++){
-// 			if (response[i].username===username.val()&&response[i].password===password.val()){
-// 				loginBackground.toggle('slow');
-// 				password.val('');
-// 				signinError.html('');
-// 			}
-// 			else{
-// 				signinError.html('Could Not Verify Sign-In, Try Again.');
-// 			}
-// 		};
-// 	},
-// 	'json'
-// );
+
 
 
