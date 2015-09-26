@@ -4,7 +4,7 @@
 /* 	
 	***DO NOT CHANGE WITHOUT CONTACTING COREY***
 	EM BASE SETS BASE EM SIZING TO 16PX
-	PRIMARY COLOR: GENERAL USE AND TEXT USE
+	PRIMARY COLOR: GENERAL USE FOR HEADERS AND TEXT USE
 	SECONDARY COLOR: LINKS AND CONTRASTING ELEMENTS
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
@@ -36,14 +36,28 @@ h2 {
 }
 
 p {
+	color: $secondary-color;
 	font-size: 1em;
 	line-height: 1.25em;
 	padding-bottom: 1.5em;
 }
 
+button {
+	background: none;
+	border: .15em solid $secondary-color;
+	border-radius: .5em;
+	color: $secondary-color;
+	font-family: "Museo-sans", sans-serif;
+	font-size: 1.75em;
+	font-weight: 700;
+	letter-spacing: -.05em;
+	padding: .25em 2em;
+	text-transform: uppercase;
+}
+
 blockquote {
 	color: $contrast-color;
-	font-family: "museo", sans-serif;
+	font-family: "Museo", sans-serif;
 	font-size: 3em;
 	font-style: italic;
 	font-weight: 700;

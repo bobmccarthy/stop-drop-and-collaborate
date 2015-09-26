@@ -1,5 +1,5 @@
 body{
-	margin: 0;
+	margin: 0 auto;
 }
 .guitarBoy {
 	background-image: url('/images/roughDraftGuitarBoy.jpg');
@@ -17,12 +17,35 @@ body{
 .coupleSunset{
 	background-image: url('/images/roughDraftCoupleSunset.jpg');
 	background-size: cover;
+	background-position: center;
+	height: 10em;
 }
 
-.guitarDingus{
-	background-image: url('/images/roughDraftGuirtarBoyRockingSideBurns.jpg');
-	background-size: cover;
-	padding:4em 0;
+.findCollab {
+	background: #120726;
+}
+
+.userStories {
+	background: $secondary_color;
+	padding: 1.5em 1em;
+
+	blockquote {
+		font-size: 2em;
+		margin: .5em 0;
+	}
+
+	p {
+		color: #fff;
+		font-size: 1.25em;
+		font-style: italic;
+		text-align: center;
+	}
+
+	img {
+		display: block;
+		margin: .75em auto;
+		width: 25%;
+	}
 }
 
 
