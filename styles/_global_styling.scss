@@ -56,14 +56,16 @@ a {
 
 button {
 	background: none;
-	border: .15em solid $secondary-color;
+	border: .1em solid $secondary-color;
 	border-radius: .35em;
 	color: $secondary-color;
+	display: block;
 	font-family: "Museo-sans", sans-serif;
 	font-size: 1.75em;
 	font-weight: 700;
 	letter-spacing: -.05em;
-	padding: .25em 2em;
+	margin: 0 auto;
+	padding: .25em;
 	text-transform: uppercase;
 }
 

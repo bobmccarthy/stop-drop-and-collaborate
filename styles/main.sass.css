@@ -85,14 +85,16 @@ a {
 
 button {
   background: none;
-  border: 0.15em solid #1F6C6E;
+  border: 0.1em solid #1F6C6E;
   border-radius: .35em;
   color: #1F6C6E;
+  display: block;
   font-family: "Museo-sans", sans-serif;
   font-size: 1.75em;
   font-weight: 700;
   letter-spacing: -.05em;
-  padding: 0.25em 2em;
+  margin: 0 auto;
+  padding: .25em;
   text-transform: uppercase; }
 
 blockquote {
@@ -102,8 +104,9 @@ blockquote {
   font-style: italic;
   font-weight: 700; }
 
-body {
-  margin: 0 auto; }
+/* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
+.mixingBoards {
+  display: none; }
 
 .guitarBoy {
   background-image: url("/images/roughDraftGuitarBoy.jpg");
@@ -115,21 +118,19 @@ body {
     font-size: 4em;
     font-family: "museo"; }
 
-.guitarBoy, .overview, .coupleSunset, .findCollab, .becomeCollab, .userStories {
-  border-box: box-sizing;
+.guitarBoy, .overview, .collabText, .becomeText, .userStories {
+  box-sizing: border-box;
   padding: .3em 5%; }
 
 .coupleSunset {
-  background-image: url("/images/roughDraftCoupleSunset.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 8em;
-  padding-top: 1em; }
+  width: 100%; }
 
-.findCollab {
+.collabText {
   background: #120726; }
-  .findCollab p {
+  .collabText p {
     color: #2a9396; }
+  .collabText button {
+    margin-bottom: .5em; }
 
 .userStories {
   background: #1F6C6E;
@@ -203,3 +204,47 @@ body {
 
 footer {
   padding: .3em 5%; }
+
+/*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
+@media screen and (min-width: 632px) {
+  .mixingBoards {
+    display: block; }
+  .coupleSunset, .mixingBoards {
+    float: left;
+    margin-right: 2%;
+    width: 38%; }
+  .collabText, .becomeText {
+    background: none;
+    float: right;
+    padding-left: 0;
+    width: 60%; }
+    .collabText h2, .becomeText h2 {
+      padding-top: 0; }
+    .collabText p, .becomeText p {
+      color: #1F6C6E; }
+    .collabText .findButton, .becomeText .findButton {
+      bottom: 0; }
+  .findCollab {
+    min-height: 18em; }
+  .becomeCollab {
+    clear: both; }
+  .userStories {
+    clear: both; } }
+
+@media screen and (min-width: 938px) {
+  .guitarBoy {
+    width: 48%;
+    margin: 0; }
+  .overview {
+    float: right;
+    width: 50%; }
+  .coupleSunset, .mixingBoards {
+    width: 48%; }
+  .collabText, .becomeText {
+    width: 50%; }
+    .collabText h2, .becomeText h2 {
+      padding-top: 0; }
+    .collabText p, .becomeText p {
+      color: #1F6C6E; }
+    .collabText .findButton, .becomeText .findButton {
+      bottom: 0; } }
