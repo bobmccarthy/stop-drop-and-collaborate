@@ -12710,19 +12710,14 @@ $(document).ready(function () {
 	});
 
 	$musicianFilterButton.on('click', function () {
-		$('#musiciansP').html('');
+		// $('#musiciansP').html('');
 		console.log($musicianFilter.val().toString());
-		$.get(musicianUrl, function (response) {
-
-			for (var i = 0; i < response.length; i++) {
-				if (response[i].instrument === $musicianFilter.val()) {
-					$('#musiciansP') + $('#musiciansP').append('<div class="entry"><button class="expand">+</button><div><img class="userImage" src="../images/default_usr_icon_sm.png"></div><div><span>' + response[i].name + '</span></div><div><span>' + response[i].instrument + '</span></div><div><span>' + response[i].contact + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
-				};
-				// else{
-				// 	$('#musiciansP').append('<p>Could Not Find a musician that plays that instrument.</p>');
-				// }
-			};
-		}, 'json');
+		if ($musicianFilter.val().toString() === '') {
+			$('.entry').show();
+		} else {
+			$('.entry').hide();
+			$('.' + $musicianFilter.val().toString() + '').show();
+		}
 	});
 
 	var Router = Backbone.Router.extend({
@@ -12760,23 +12755,6 @@ $(document).ready(function () {
 	Backbone.history.start();
 });
 
-// $.get(
-// 	usersURL,
-// 	function (response){
-// 		for(var i=0; i<response.length; i++){
-// 			if (response[i].username===username.val()&&response[i].password===password.val()){
-// 				loginBackground.toggle('slow');
-// 				password.val('');
-// 				signinError.html('');
-// 			}
-// 			else{
-// 				signinError.html('Could Not Verify Sign-In, Try Again.');
-// 			}
-// 		};
-// 	},
-// 	'json'
-// );
-
 },{"./collections/musician-collection.js":4,"./models/musician-model.js":6,"./views/musicianView.js":7,"backbone":1,"jquery":3}],6:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
@@ -12802,19 +12780,19 @@ module.exports = Backbone.View.extend({
 	tagName: 'section',
 	initialize: function initialize() {
 
-		// console.log('I made it to initialize');
-
 		_.bindAll(this, 'render', 'expander');
+
 		this.render();
 		this.model.on('change', this.render);
 		this.$('#expand').on('click', this.expander);
 	},
 	render: function render() {
+
 		var userName = this.model.get('name');
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 
-		this.$el.html('<div class="entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div><span>' + userEmail + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
+		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div><span>' + userEmail + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
 		this.$('#desc').hide();
 	},
 	expander: function expander() {
@@ -12822,22 +12800,6 @@ module.exports = Backbone.View.extend({
 		this.$('#desc').toggle('down');
 	}
 
-	// onChangeUser: function(){
-	// 	if (this.model.get('complete') !== false){
-	// 		this.$el.css('text-decoration', 'line-through');
-	// 		this.model.set({complete: true});
-	// 	}
-	// 	else{
-	// 		this.$el.css('text-decoration', 'none');
-	// 		this.model.set({complete: false});
-	// 	}
-
-	// },
-	// timeStamp: function(){
-
-	// 	var since=moment(date).fromNow()
-
-	// }
 });
 
 },{"../models/musician-model.js":6,"backbone":1,"backbone/node_modules/underscore":2,"jquery":3}]},{},[5])
