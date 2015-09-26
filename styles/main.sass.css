@@ -233,18 +233,20 @@ footer {
 
 @media screen and (min-width: 938px) {
   .guitarBoy {
-    width: 48%;
-    margin: 0; }
+    width: 45%;
+    margin-right: 0; }
   .overview {
     float: right;
-    width: 50%; }
+    width: 53%; }
   .coupleSunset, .mixingBoards {
-    width: 48%; }
+    width: 45%; }
   .collabText, .becomeText {
-    width: 50%; }
+    width: 53%; }
     .collabText h2, .becomeText h2 {
       padding-top: 0; }
     .collabText p, .becomeText p {
       color: #1F6C6E; }
     .collabText .findButton, .becomeText .findButton {
-      bottom: 0; } }
+      bottom: 0; }
+  .userStories {
+    width: 45%; } }
