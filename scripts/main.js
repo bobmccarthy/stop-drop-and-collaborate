@@ -4,13 +4,19 @@ var Backbone = require ('backbone');
 var musicianView = require('./views/musicianView.js');
 var musicianCollection = require('./collections/musician-collection.js');
 var musicianModel= require('./models/musician-model.js');
+var motionView = require('./views/motionView.js');
+var motionCollection = require('./collections/motion-collection.js');
+var motionModel= require('./models/motion-model.js');
 
 
 var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
+var motionUrl = 'https://skills-up.herokuapp.com/motioners';
 
 $(document).ready(function(){
 	var $musicianFilter = $('#musicianFilter');
 	var $musicianFilterButton=$('#musicianFilterButton');
+	var $motionFilter = $('#motionFilter');
+	var $motionFilterButton=$('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name=$('#name');
 	
@@ -19,12 +25,13 @@ $(document).ready(function(){
 	
 
 	var newMusician = new musicianCollection();
+	var newMotion = new motionCollection();
 
 	addUser.on('submit', function(e){
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument_id: $instrument.val(),
+			instrument: $instrument.val(),
 			contact: $email.val()
 		});		
 		
@@ -37,7 +44,13 @@ $(document).ready(function(){
 		var user1= new musicianView({model: newUser});
 		// console.log('add workd');
 		$('#musiciansP').append(user1.$el);
-	})
+	});
+	newMotion.on('add', function(newUser){
+		// newUser.save();
+		var user1= new motionView({model: newUser});
+		// console.log('add workd');
+		$('#motionsP').append(user1.$el);
+	});
 
 
 	$musicianFilterButton.on('click', function(){
@@ -49,6 +62,18 @@ $(document).ready(function(){
 		else{
 			$('.entry').hide();
 			$('.'+$musicianFilter.val().toString()+'').show();
+		}
+		
+	});
+	$motionFilterButton.on('click', function(){
+		// $('#musiciansP').html('');
+		console.log($motionFilter.val().toString());
+		if ($motionFilter.val().toString()===''){
+			$('.entry').show();
+		}
+		else{
+			$('.entry').hide();
+			$('.'+$motionFilter.val().toString()+'').show();
 		}
 		
 	});
@@ -76,6 +101,7 @@ $(document).ready(function(){
 			$('section').hide();
 			$('#musiciansPage').show();
 			newMusician.fetch();
+			newMotion.fetch();
 		},
 		findUser: function() {
 			$('section').hide();
