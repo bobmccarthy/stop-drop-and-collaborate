@@ -1,5 +1,26 @@
+/* 	GLOBAL STYLES AND VARIABLES ARE LOCATED ON THIS STYLESHEET */
+/* 	
+	***DO NOT CHANGE WITHOUT CONTACTING COREY***
+	EM BASE SETS BASE EM SIZING TO 16PX
+	PRIMARY COLOR: GENERAL USE AND TEXT USE
+	SECONDARY COLOR: LINKS AND CONTRASTING ELEMENTS
+	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
+	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
+*/
 h1, h2, h3 {
+  color: #353F4C;
   font-family: "Museo", sans-serif; }
+
+h4, h5, h6, p {
+  color: #353F4C;
+  font-family: "Museo-sans", sans-serif; }
+
+blockquote {
+  color: #FF5F49;
+  font-family: "museo", sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  font-weight: 700; }
 
 body {
   margin: 0; }
@@ -17,10 +38,6 @@ body {
 .coupleSunset {
   background-image: url("/images/roughDraftCoupleSunset.jpg");
   background-size: cover; }
-  .coupleSunset .collabText {
-    padding-top: 4em;
-    color: black;
-    font-size: 2em; }
 
 .guitarDingus {
   background-image: url("/images/roughDraftGuirtarBoyRockingSideBurns.jpg");
