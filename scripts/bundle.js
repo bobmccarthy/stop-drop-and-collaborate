@@ -12668,7 +12668,7 @@ var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.Collection.extend({
 	model: musicianModel,
-	url: 'https://skills-up.herokuapp.com/'
+	url: 'https://skills-up.herokuapp.com/musicians'
 
 });
 
@@ -12755,7 +12755,7 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
-	urlRoot: 'https://skills-up.herokuapp.com/',
+	urlRoot: 'https://skills-up.herokuapp.com/musicians',
 	idAttribute: 'id'
 });
 
