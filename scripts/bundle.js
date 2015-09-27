@@ -12758,11 +12758,10 @@ $(document).ready(function () {
 	var page = new Router();
 	Backbone.history.start();
 
+	$('#carousel2').hide();
 	var t = setInterval(function () {
-		$("#carousel ul").animate({ marginLeft: -480 }, 1000, function () {
-			$(this).find("li:last").after($(this).find("li:first"));
-			$(this).css({ marginLeft: 0 });
-		});
+		$('#carousel1').toggle('left');
+		$('#carousel2').toggle('right');
 	}, 5000);
 
 	$('#logInForm').on('submit', function () {});
@@ -12848,7 +12847,13 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
+<<<<<<< HEAD
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
+=======
+
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
+
+>>>>>>> 2c69d2b650d20cbeb570a23fa7831fc7c95827f6
 	idAttribute: 'id'
 });
 
