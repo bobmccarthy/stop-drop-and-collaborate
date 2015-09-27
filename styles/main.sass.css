@@ -76,6 +76,9 @@ h3 {
   font-size: 1.75em;
   padding: .5em 0; }
 
+h4 {
+  font-size: 1.25em; }
+
 p {
   color: #1F6C6E;
   font-size: 1em;
@@ -240,11 +243,9 @@ footer {
   height: 3em; }
 
 #expand {
-  display: inline-block;
   box-sizing: border-box;
-  padding: 0 0.25em;
-  position: absolute;
-  right: 5%; }
+  float: right;
+  padding: 0 0.25em; }
 
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
@@ -315,6 +316,8 @@ footer {
   .entry {
     float: left;
     margin-right: 2%;
-    width: 32%; }
+    width: 6.5%; }
     .entry:last-child {
-      margin-right: 0; } }
+      margin-right: 0; }
+  .row {
+    padding-bottom: 2%; } }

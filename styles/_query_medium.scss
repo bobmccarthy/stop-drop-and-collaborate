@@ -42,6 +42,10 @@
 	}
 
 	.entry {
-		@include grid(4);
+		@include grid(1);
+	}
+
+	.row {
+		padding-bottom: 2%;
 	}
 }
