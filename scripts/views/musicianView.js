@@ -34,7 +34,7 @@ module.exports=Backbone.View.extend({
 		console.log(this.model.get('name'));
 		
 		
-		this.$el.html('<div class="'+userInstrument+' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><h4>'+userName+'</h4><p class="userInstrument">'+userInstrument+'</p><div id="desc"><p>'+userEmail+'</p><p>I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p></div></div>');
+		this.$el.html('<div class="'+userInstrument+' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><h4>'+userName+'</h4><div id="desc"><p class="userInstrument">'+userInstrument+'</p><p>'+userEmail+'</p><p>I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p></div></div>');
 		this.$('#desc').hide();
 		
 		
