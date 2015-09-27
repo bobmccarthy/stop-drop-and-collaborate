@@ -12664,28 +12664,51 @@ return jQuery;
 
 var Backbone = require('backbone');
 
+var motionModel = require('../models/motion-model.js');
+
+module.exports = Backbone.Collection.extend({
+	model: motionModel,
+	url: 'https://skills-up.herokuapp.com/motioners'
+
+});
+
+},{"../models/motion-model.js":7,"backbone":1}],5:[function(require,module,exports){
+'use strict';
+
+var Backbone = require('backbone');
+
 var musicianModel = require('../models/musician-model.js');
 
 module.exports = Backbone.Collection.extend({
 	model: musicianModel,
-	url: 'https://skills-up.herokuapp.com/'
+	url: 'https://skills-up.herokuapp.com/musicians'
 
 });
 
-},{"../models/musician-model.js":6,"backbone":1}],5:[function(require,module,exports){
+},{"../models/musician-model.js":8,"backbone":1}],6:[function(require,module,exports){
 'use strict';
 var $ = require('jquery');
 var Backbone = require('backbone');
 var musicianView = require('./views/musicianView.js');
 var musicianCollection = require('./collections/musician-collection.js');
 var musicianModel = require('./models/musician-model.js');
+var motionView = require('./views/motionView.js');
+var motionCollection = require('./collections/motion-collection.js');
+var motionModel = require('./models/motion-model.js');
+
+var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
+var motionUrl = 'https://skills-up.herokuapp.com/motioners';
 
 $(document).ready(function () {
-
+	var $musicianFilter = $('#musicianFilter');
+	var $musicianFilterButton = $('#musicianFilterButton');
+	var $motionFilter = $('#motionFilter');
+	var $motionFilterButton = $('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name = $('#name');
 
 	var $email = $('#email');
+
 	var dropdownSelection = '#instrument';
 	var t = setInterval(function () {
 		$("#carousel ul").animate({ marginLeft: -480 }, 1000, function () {
@@ -12694,16 +12717,18 @@ $(document).ready(function () {
 		});
 	}, 5000);
 
+	// var dropdownSelection = ('#instrument');
+
 	var newMusician = new musicianCollection();
+	var newMotion = new motionCollection();
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
 		newMusician.create({
 			name: $name.val(),
-			instrument_id: 1,
+			instrument: $instrument.val(),
 			contact: $email.val()
 		});
-		console.log(dropdownSelection.val());
 	});
 
 	newMusician.on('add', function (newUser) {
@@ -12712,8 +12737,33 @@ $(document).ready(function () {
 		// console.log('add workd');
 		$('#musiciansP').append(user1.$el);
 	});
+	newMotion.on('add', function (newUser) {
+		// newUser.save();
+		var user1 = new motionView({ model: newUser });
+		// console.log('add workd');
+		$('#motionsP').append(user1.$el);
+	});
 
-	newMusician.fetch();
+	$musicianFilterButton.on('click', function () {
+		// $('#musiciansP').html('');
+		console.log($musicianFilter.val().toString());
+		if ($musicianFilter.val().toString() === '') {
+			$('.entry').show();
+		} else {
+			$('.entry').hide();
+			$('.' + $musicianFilter.val().toString() + '').show();
+		}
+	});
+	$motionFilterButton.on('click', function () {
+		// $('#musiciansP').html('');
+		console.log($motionFilter.val().toString());
+		if ($motionFilter.val().toString() === '') {
+			$('.entry').show();
+		} else {
+			$('.entry').hide();
+			$('.' + $motionFilter.val().toString() + '').show();
+		}
+	});
 
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -12733,13 +12783,14 @@ $(document).ready(function () {
 			$('section').hide();
 			$('#musiciansPage').show();
 			$('.carousel').hide();
+
+			newMusician.fetch();
+			newMotion.fetch();
 		},
 		findUser: function findUser() {
 			$('section').hide();
-
 			$('#homePage').show();
 			$('#logIn').toggle('slow');
-			// $('#homePage').css({'z-index': 900});
 		},
 		addUserScreen: function addUserScreen() {
 			$('section').hide();
@@ -12753,23 +12804,70 @@ $(document).ready(function () {
 	Backbone.history.start();
 });
 
-},{"./collections/musician-collection.js":4,"./models/musician-model.js":6,"./views/musicianView.js":7,"backbone":1,"jquery":3}],6:[function(require,module,exports){
+},{"./collections/motion-collection.js":4,"./collections/musician-collection.js":5,"./models/motion-model.js":7,"./models/musician-model.js":8,"./views/motionView.js":9,"./views/musicianView.js":10,"backbone":1,"jquery":3}],7:[function(require,module,exports){
 'use strict';
 var Backbone = require('backbone');
 
 module.exports = Backbone.Model.extend({
 	defaults: {
 		name: '',
-		instrument_id: '',
+		concentration: '',
 		contact: ''
 	},
-	urlRoot: 'https://skills-up.herokuapp.com/',
+	urlRoot: 'https://skills-up.herokuapp.com/motioners',
 	idAttribute: 'id'
 });
 
-},{"backbone":1}],7:[function(require,module,exports){
+},{"backbone":1}],8:[function(require,module,exports){
 'use strict';
+var Backbone = require('backbone');
 
+module.exports = Backbone.Model.extend({
+	defaults: {
+		name: '',
+		instrument: '',
+		contact: ''
+	},
+	urlRoot: 'https://skills-up.herokuapp.com/musicians',
+	idAttribute: 'id'
+});
+
+},{"backbone":1}],9:[function(require,module,exports){
+'use strict';
+var $ = require('jquery');
+var Backbone = require('backbone');
+var _ = require('backbone/node_modules/underscore');
+var motionModel = require('../models/motion-model.js');
+
+module.exports = Backbone.View.extend({
+	tagName: 'section',
+	initialize: function initialize() {
+
+		_.bindAll(this, 'render', 'expander');
+
+		this.render();
+		this.model.on('change', this.render);
+		this.$('#expand').on('click', this.expander);
+	},
+	render: function render() {
+
+		var userName = this.model.get('name');
+		var userConcentration = this.model.get('concentration');
+		var userEmail = this.model.get('contact');
+
+		this.$el.html('<div class="' + userConcentration + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userConcentration + '</span></div><div><span>' + userEmail + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
+		this.$('#desc').hide();
+	},
+	expander: function expander() {
+		console.log('clicked');
+		this.$('#desc').toggle('down');
+	}
+
+});
+
+},{"../models/motion-model.js":7,"backbone":1,"backbone/node_modules/underscore":2,"jquery":3}],10:[function(require,module,exports){
+'use strict';
+var $ = require('jquery');
 var Backbone = require('backbone');
 var _ = require('backbone/node_modules/underscore');
 var musicianModel = require('../models/musician-model.js');
@@ -12778,40 +12876,29 @@ module.exports = Backbone.View.extend({
 	tagName: 'section',
 	initialize: function initialize() {
 
-		console.log('I made it to initialize');
+		_.bindAll(this, 'render', 'expander');
 
-		_.bindAll(this, 'render');
-		this.model.on('change', this.render);
-		// this.$el.on('click', this.onChangeUser);
 		this.render();
+		this.model.on('change', this.render);
+		this.$('#expand').on('click', this.expander);
 	},
 	render: function render() {
-		console.log('renderssssss');
+
 		var userName = this.model.get('name');
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 
-		this.$el.html('<div class="entry"><img class="userImage" src="../images/default_usr_icon_sm.png"><span>' + userName + '</span><span>' + userInstrument + '</span><span>' + userEmail + '</span></div>');
+		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div><span>' + userEmail + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
+		this.$('#desc').hide();
+	},
+	expander: function expander() {
+		console.log('clicked');
+		this.$('#desc').toggle('down');
 	}
-	// onChangeUser: function(){
-	// 	if (this.model.get('complete') !== false){
-	// 		this.$el.css('text-decoration', 'line-through');
-	// 		this.model.set({complete: true});
-	// 	}
-	// 	else{
-	// 		this.$el.css('text-decoration', 'none');
-	// 		this.model.set({complete: false});
-	// 	}
 
-	// },
-	// timeStamp: function(){
-
-	// 	var since=moment(date).fromNow()
-
-	// }
 });
 
-},{"../models/musician-model.js":6,"backbone":1,"backbone/node_modules/underscore":2}]},{},[5])
+},{"../models/musician-model.js":8,"backbone":1,"backbone/node_modules/underscore":2,"jquery":3}]},{},[6])
 
 
 //# sourceMappingURL=bundle.js.map

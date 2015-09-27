@@ -1,10 +1,8 @@
-body{
-	margin: 0;
-}
 .guitarBoy {
 	background-image: url('/images/roughDraftGuitarBoy.jpg');
 	text-align: center;
 	background-size: cover;
+	
 	h1{
 		padding:2em 0;
 		color:white;
@@ -14,15 +12,48 @@ body{
 	
 }
 
-.coupleSunset{
-	background-image: url('/images/roughDraftCoupleSunset.jpg');
-	background-size: cover;
+.guitarBoy, .overview, .collabText, .becomeText, .userStories {
+	box-sizing: border-box;
+	padding: .3em 5%;
 }
 
-.guitarDingus{
-	background-image: url('/images/roughDraftGuirtarBoyRockingSideBurns.jpg');
-	background-size: cover;
-	padding:4em 0;
+.coupleSunset {
+	width: 100%;
+}
+
+.collabText {
+	background: #120726;
+
+	p {
+		color: lighten($secondary-color, 10%);
+	}
+
+	button {
+		margin-bottom: .5em;
+	}
+}
+
+.userStories {
+	background: $secondary_color;
+	padding: 1.5em 1em;
+
+	blockquote {
+		font-size: 2em;
+		margin: .5em 0;
+	}
+
+	p {
+		color: #fff;
+		font-size: 1.25em;
+		font-style: italic;
+		text-align: center;
+	}
+
+	img {
+		display: block;
+		margin: .75em auto;
+		width: 25%;
+	}
 }
 
 
@@ -88,4 +119,8 @@ body{
 }
 .userImage{
 	height: 1em;
+}
+
+footer {
+	padding: .3em 5%;
 }

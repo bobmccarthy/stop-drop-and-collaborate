@@ -1,0 +1,46 @@
+/*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
+
+@media screen and(min-width: 632px) {
+
+	.mixingBoards {
+		display: block;
+	}
+
+	.coupleSunset, .mixingBoards {
+		float: left;
+		margin-right: 2%;
+		width: 38%;
+	}
+
+	.collabText, .becomeText {
+		background: none;
+		float: right;
+		padding-left: 0;
+		width: 60%;
+
+		h2 {
+			padding-top: 0;
+		}
+
+		p {
+			color: $secondary-color;
+		}
+
+		.findButton {
+			bottom: 0;
+		}
+	}
+
+	.findCollab {
+		min-height: 18em;
+	}
+
+	.becomeCollab {
+		clear: both;
+	}
+
+	.userStories {
+		clear:both;
+	}
+
+}

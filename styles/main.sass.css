@@ -49,7 +49,7 @@ table {
 /* 	
 	***DO NOT CHANGE WITHOUT CONTACTING COREY***
 	EM BASE SETS BASE EM SIZING TO 16PX
-	PRIMARY COLOR: GENERAL USE AND TEXT USE
+	PRIMARY COLOR: GENERAL USE FOR HEADERS AND TEXT USE
 	SECONDARY COLOR: LINKS AND CONTRASTING ELEMENTS
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
@@ -70,19 +70,43 @@ h2 {
   padding: .5em 0; }
 
 p {
+  color: #1F6C6E;
   font-size: 1em;
+  font-weight: 300;
   line-height: 1.25em;
   padding-bottom: 1.5em; }
 
+a {
+  color: #FF5F49;
+  font-family: "Museo-sans", sans-serif;
+  text-decoration: none; }
+  a:hover {
+    color: #e21b00; }
+
+button {
+  background: none;
+  border: 0.1em solid #1F6C6E;
+  border-radius: .35em;
+  color: #1F6C6E;
+  display: block;
+  font-family: "Museo-sans", sans-serif;
+  font-size: 1.75em;
+  font-weight: 700;
+  letter-spacing: -.05em;
+  margin: 0 auto;
+  padding: .25em;
+  text-transform: uppercase; }
+
 blockquote {
   color: #FF5F49;
-  font-family: "museo", sans-serif;
+  font-family: "Museo", sans-serif;
   font-size: 3em;
   font-style: italic;
   font-weight: 700; }
 
-body {
-  margin: 0; }
+/* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
+.mixingBoards {
+  display: none; }
 
 .guitarBoy {
   background-image: url("/images/roughDraftGuitarBoy.jpg");
@@ -94,14 +118,35 @@ body {
     font-size: 4em;
     font-family: "museo"; }
 
-.coupleSunset {
-  background-image: url("/images/roughDraftCoupleSunset.jpg");
-  background-size: cover; }
+.guitarBoy, .overview, .collabText, .becomeText, .userStories {
+  box-sizing: border-box;
+  padding: .3em 5%; }
 
-.guitarDingus {
-  background-image: url("/images/roughDraftGuirtarBoyRockingSideBurns.jpg");
-  background-size: cover;
-  padding: 4em 0; }
+.coupleSunset {
+  width: 100%; }
+
+.collabText {
+  background: #120726; }
+  .collabText p {
+    color: #2a9396; }
+  .collabText button {
+    margin-bottom: .5em; }
+
+.userStories {
+  background: #1F6C6E;
+  padding: 1.5em 1em; }
+  .userStories blockquote {
+    font-size: 2em;
+    margin: .5em 0; }
+  .userStories p {
+    color: #fff;
+    font-size: 1.25em;
+    font-style: italic;
+    text-align: center; }
+  .userStories img {
+    display: block;
+    margin: .75em auto;
+    width: 25%; }
 
 #logIn {
   padding: 7em 0;
@@ -156,3 +201,50 @@ body {
 
 .userImage {
   height: 1em; }
+
+footer {
+  padding: .3em 5%; }
+
+/*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
+@media screen and (min-width: 632px) {
+  .mixingBoards {
+    display: block; }
+  .coupleSunset, .mixingBoards {
+    float: left;
+    margin-right: 2%;
+    width: 38%; }
+  .collabText, .becomeText {
+    background: none;
+    float: right;
+    padding-left: 0;
+    width: 60%; }
+    .collabText h2, .becomeText h2 {
+      padding-top: 0; }
+    .collabText p, .becomeText p {
+      color: #1F6C6E; }
+    .collabText .findButton, .becomeText .findButton {
+      bottom: 0; }
+  .findCollab {
+    min-height: 18em; }
+  .becomeCollab {
+    clear: both; }
+  .userStories {
+    clear: both; } }
+
+@media screen and (min-width: 938px) {
+  .guitarBoy {
+    width: 48%;
+    margin: 0; }
+  .overview {
+    float: right;
+    width: 50%; }
+  .coupleSunset, .mixingBoards {
+    width: 48%; }
+  .collabText, .becomeText {
+    width: 50%; }
+    .collabText h2, .becomeText h2 {
+      padding-top: 0; }
+    .collabText p, .becomeText p {
+      color: #1F6C6E; }
+    .collabText .findButton, .becomeText .findButton {
+      bottom: 0; } }
