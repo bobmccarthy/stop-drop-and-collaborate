@@ -1,13 +1,16 @@
 @media screen and (min-width: 938px) {
 	.guitarBoy {
-		width: 45%;
+		display: inline-block;
 		margin-right: 0;
+		width: 45%;
 	}
 
 	.overview {
+		display: inline;
 		float: right;
+		padding-top: 9.5em;
 		padding-left: 0;
-		width: 53%;
+		width: 48%;
 	}
 
 	.imageTrio {
@@ -22,7 +25,8 @@
 	}
 
 	.collabText, .becomeText {
-		width: 53%;
+		padding-top: 4em;
+		width: 48%;
 
 		h2 {
 			padding-top: 0;
@@ -39,6 +43,21 @@
 
 	.userStories {
 		width: 45%;
+	}
+
+/*	ADJUSTMENTS FOR MUSICIANS SEARCH AND RESULTS PAGE */
+
+	.musicHeader {
+		height: 16em;
+		background-position: 30% 20%;
+	}
+
+	.appLogo {
+		font-size: 3em;
+	}
+
+	.appNav {
+		font-size: 1.5em;
 	}
 
 	.entry {

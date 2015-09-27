@@ -6,6 +6,16 @@
 	&:nth-of-type(odd) {
 		background: tint($primary-color, 85%)
 	}
+
+	h4 {
+		display: inline-block;
+		padding-left: 1em;
+	}
+
+	.userInstrument {
+		display: inline-block;
+		padding-left: 1em;
+	}
 }
 
 .userImage {
@@ -13,8 +23,14 @@
 }
 
 #expand {
+	border: none;
 	box-sizing: border-box;
+	font-size: 1.5em;
 	float: right;
 	padding: 0 .25em;
+
+	&:target {
+		animation: expand_rotation .5s linear 1 both;
+	}
 }
 

@@ -12,9 +12,23 @@
 	
 }
 
+nav {
+	a {
+		margin-right: 1.5em;
+
+		&:last-child {
+			margin-right: .5em;
+		}
+	}
+}
+
 .guitarBoy, .overview, .collabText, .becomeText, .userStories {
 	box-sizing: border-box;
 	padding: .3em 5%;
+}
+
+.overview {
+	padding-top: 1.5em;
 }
 
 .coupleSunset {
@@ -31,6 +45,10 @@
 	button {
 		margin-bottom: .5em;
 	}
+}
+
+.fakeAddUser {
+		margin-bottom: .5em;
 }
 
 .userStories {
