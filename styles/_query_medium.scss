@@ -3,12 +3,17 @@
 		display: inline-block;
 		margin-right: 0;
 		width: 45%;
+
+		h1 {
+			font-size: 5em;
+			padding: 1em auto;
+		}
 	}
 
 	.overview {
 		display: inline;
 		float: right;
-		padding-top: 9.5em;
+		padding-top: 11.4em;
 		padding-left: 0;
 		width: 48%;
 	}
@@ -20,11 +25,11 @@
 		width: 45%;
 	}
 
-	.coupleSunset, .mixingBoards, .imageTrio {
+	.coupleSunset, .mixingBoards, .imageTrio, footer {
 		width: 45%;
 	}
 
-	.collabText, .becomeText {
+	.collabText, .becomeText, .aboutInfo {
 		padding-top: 4em;
 		width: 48%;
 

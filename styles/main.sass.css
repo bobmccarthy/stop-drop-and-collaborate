@@ -111,7 +111,7 @@ button {
   letter-spacing: -.05em;
   margin: 0 auto;
   padding: .25em;
-  text-transform: uppercase; }
+  text-transform: lowercase; }
   button:hover {
     color: #2a9396; }
 
@@ -165,7 +165,7 @@ blockquote {
     font-size: .5em; }
 
 /* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
-.mixingBoards, .imageTrio {
+.mixingBoards, .imageTrio, .aboutInfo {
   display: none; }
 
 .guitarBoy {
@@ -183,7 +183,7 @@ nav a {
   nav a:last-child {
     margin-right: .5em; }
 
-.guitarBoy, .overview, .collabText, .becomeText, .userStories {
+.guitarBoy, .overview, .collabText, .becomeText, .userStories, .aboutInfo {
   box-sizing: border-box;
   padding: .3em 5%; }
 
@@ -204,6 +204,7 @@ nav a {
   margin-bottom: .5em; }
 
 .userStories {
+  height: 18em;
   background: #1F6C6E;
   padding: 1.5em 1em; }
   .userStories blockquote {
@@ -220,7 +221,14 @@ nav a {
     width: 25%; }
 
 footer {
-  padding: .3em 5%; }
+  background: #1F6C6E;
+  clear: both; }
+  footer p {
+    color: #faf8f5;
+    display: block;
+    font-size: .75em;
+    padding-top: .5em;
+    text-align: center; }
 
 .musicHeader {
   background-image: url("/images/putsMac.jpg");
@@ -283,20 +291,21 @@ nav {
 @media screen and (min-width: 632px) {
   .mixingBoards {
     display: block; }
-  .coupleSunset, .mixingBoards {
+  .coupleSunset, .mixingBoards, .userStories {
     float: left;
     margin-right: 2%;
     width: 38%; }
-  .collabText, .becomeText {
+  .overview, .collabText, .becomeText, .aboutInfo {
     background: none;
+    display: block;
     float: right;
     padding-left: 0;
     width: 60%; }
-    .collabText h2, .becomeText h2 {
+    .overview h2, .collabText h2, .becomeText h2, .aboutInfo h2 {
       padding-top: 0; }
-    .collabText p, .becomeText p {
+    .overview p, .collabText p, .becomeText p, .aboutInfo p {
       color: #1F6C6E; }
-    .collabText .findButton, .becomeText .findButton {
+    .overview .findButton, .collabText .findButton, .becomeText .findButton, .aboutInfo .findButton {
       bottom: 0; }
   .findCollab {
     min-height: 18em; }
@@ -304,6 +313,8 @@ nav {
     clear: both; }
   .userStories {
     clear: both; }
+  footer {
+    width: 38%; }
   /*	SIZE ADJUSTMENTS FOR MUSIC SEARCH PAGE */
   .musicHeader {
     height: 12em; }
@@ -329,10 +340,13 @@ nav {
     display: inline-block;
     margin-right: 0;
     width: 45%; }
+    .guitarBoy h1 {
+      font-size: 5em;
+      padding: 1em auto; }
   .overview {
     display: inline;
     float: right;
-    padding-top: 9.5em;
+    padding-top: 11.4em;
     padding-left: 0;
     width: 48%; }
   .imageTrio {
@@ -340,16 +354,16 @@ nav {
     display: block;
     float: left;
     width: 45%; }
-  .coupleSunset, .mixingBoards, .imageTrio {
+  .coupleSunset, .mixingBoards, .imageTrio, footer {
     width: 45%; }
-  .collabText, .becomeText {
+  .collabText, .becomeText, .aboutInfo {
     padding-top: 4em;
     width: 48%; }
-    .collabText h2, .becomeText h2 {
+    .collabText h2, .becomeText h2, .aboutInfo h2 {
       padding-top: 0; }
-    .collabText p, .becomeText p {
+    .collabText p, .becomeText p, .aboutInfo p {
       color: #1F6C6E; }
-    .collabText .findButton, .becomeText .findButton {
+    .collabText .findButton, .becomeText .findButton, .aboutInfo .findButton {
       bottom: 0; }
   .userStories {
     width: 45%; }
