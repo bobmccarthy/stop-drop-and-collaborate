@@ -7,6 +7,6 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
-	urlRoot: 'https://skills-up.herokuapp.com/musicians',
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
 	idAttribute: 'id'
 })
