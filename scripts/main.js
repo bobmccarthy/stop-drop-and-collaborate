@@ -31,7 +31,7 @@ $(document).ready(function(){
 		routes: {
 			'' : 'goHome',
 			'account': 'findUser',
-			'collaborators' : 'goMusic',//THIS IS MAKING THE INTER SCREEN NOT COME UP
+			'collaborators': 'goMusic',//THIS IS MAKING THE INTER SCREEN NOT COME UP
 			'addUser': 'addUserScreen',
 			'musicians': 'goMusic',
 			'motioners': 'goMotion'
@@ -98,7 +98,9 @@ $(document).ready(function(){
 
 	addUser.on('submit', function(e){
 		e.preventDefault();
-		$.post('http://tiyfe.herokuapp.com/collections/testers',
+
+		$.post(
+			'http://tiyfe.herokuapp.com/collections/testers',
 			{
 				name: $name.val(),
 				instrument: $('#instrument').val(),
@@ -112,6 +114,7 @@ $(document).ready(function(){
 				$('#musiciansPage').show();
 				newMusician.fetch();
 			});
+
 	});
 
 	newMusician.on('add', function(newUser){

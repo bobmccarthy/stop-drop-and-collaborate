@@ -4,7 +4,7 @@ var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults:{
 		name: '',
-		instrument: '',
+		instrument_id: '',
 		contact: ''
 	},
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
