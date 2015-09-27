@@ -271,8 +271,8 @@ nav {
   font-size: 1.5em;
   float: right;
   padding: 0 0.25em; }
-  #expand:target {
-    animation: expand_rotation 0.5s linear 1 both; }
+  #expand:active {
+    animation: expand_rotation 0.5s linear 1 forward; }
 
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
