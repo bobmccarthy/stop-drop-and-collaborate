@@ -217,6 +217,13 @@ blockquote {
 footer {
   padding: .3em 5%; }
 
+.musicHeader {
+  background-image: url("/images/putsMac.jpg");
+  background-size: cover;
+  height: 10em;
+  text-align: center;
+  width: 100%; }
+
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
   .mixingBoards {
