@@ -1,0 +1,21 @@
+.entry {
+	border-top: 2px solid $background-color;
+	font-family: "Museo-sans", sans-serif;
+	padding: 1.5em 5%;
+
+	&:nth-of-type(odd) {
+		background: tint($primary-color, 85%)
+	}
+}
+
+.userImage {
+	height: 3em;
+}
+
+#expand {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 .25em;
+	position: absolute;
+	right: 5%;
+}

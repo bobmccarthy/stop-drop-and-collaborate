@@ -12847,7 +12847,9 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
+
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
+
 	idAttribute: 'id'
 });
 

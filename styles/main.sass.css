@@ -72,6 +72,10 @@ h2 {
   font-size: 2em;
   padding: .5em 0; }
 
+h3 {
+  font-size: 1.75em;
+  padding: .5em 0; }
+
 p {
   color: #1F6C6E;
   font-size: 1em;
@@ -84,7 +88,7 @@ a {
   font-family: "Museo-sans", sans-serif;
   text-decoration: none; }
   a:hover {
-    color: #e21b00; }
+    color: #d9513e; }
 
 button {
   background: none;
@@ -99,6 +103,8 @@ button {
   margin: 0 auto;
   padding: .25em;
   text-transform: uppercase; }
+  button:hover {
+    color: #2a9396; }
 
 blockquote {
   color: #FF5F49;
@@ -188,13 +194,6 @@ blockquote {
     margin: .75em auto;
     width: 25%; }
 
-.entry {
-  border: 2px solid #B2B2B2;
-  padding: .5em; }
-
-.userImage {
-  height: 1em; }
-
 footer {
   padding: .3em 5%; }
 
@@ -202,8 +201,50 @@ footer {
   background-image: url("/images/putsMac.jpg");
   background-size: cover;
   height: 10em;
-  text-align: center;
-  width: 100%; }
+  text-align: center; }
+
+.appLogo {
+  color: #1F6C6E;
+  left: .25em;
+  padding: 0;
+  position: absolute;
+  top: .25em; }
+
+.appNav {
+  position: absolute;
+  right: .5em;
+  top: .5em; }
+
+.genInfo {
+  padding: 0 5%; }
+
+#musicianFilter {
+  display: block;
+  font-family: "Museo-sans", sans-serif;
+  font-size: 1em;
+  margin: 1em auto;
+  width: 80%; }
+
+#musicianFilterButton {
+  width: 80%;
+  margin-bottom: .5em; }
+
+.entry {
+  border-top: 2px solid #faf8f5;
+  font-family: "Museo-sans", sans-serif;
+  padding: 1.5em 5%; }
+  .entry:nth-of-type(odd) {
+    background: #e1e2e4; }
+
+.userImage {
+  height: 3em; }
+
+#expand {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 0.25em;
+  position: absolute;
+  right: 5%; }
 
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
@@ -229,7 +270,22 @@ footer {
   .becomeCollab {
     clear: both; }
   .userStories {
-    clear: both; } }
+    clear: both; }
+  /*	SIZE ADJUSTMENTS FOR MUSIC SEARCH PAGE */
+  .musicHeader {
+    height: 12em; }
+  .genInfo, .entry {
+    padding: 1.5em 10%; }
+  #musicianFilter {
+    display: block;
+    float: left;
+    font-family: "Museo-sans", sans-serif;
+    font-size: 1em;
+    margin: 1em auto;
+    width: 45%; }
+  #musicianFilterButton {
+    width: 45%;
+    margin-bottom: .5em; } }
 
 @media screen and (min-width: 938px) {
   .guitarBoy {
@@ -255,4 +311,10 @@ footer {
     .collabText .findButton, .becomeText .findButton {
       bottom: 0; }
   .userStories {
-    width: 45%; } }
+    width: 45%; }
+  .entry {
+    float: left;
+    margin-right: 2%;
+    width: 32%; }
+    .entry:last-child {
+      margin-right: 0; } }
