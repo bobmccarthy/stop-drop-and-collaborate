@@ -6,14 +6,15 @@
 		display: block;
 	}
 
-	.coupleSunset, .mixingBoards {
+	.coupleSunset, .mixingBoards, .userStories {
 		float: left;
 		margin-right: 2%;
 		width: 38%;
 	}
 
-	.collabText, .becomeText {
+	.overview, .collabText, .becomeText, .aboutInfo {
 		background: none;
+		display: block;
 		float: right;
 		padding-left: 0;
 		width: 60%;
@@ -41,6 +42,10 @@
 
 	.userStories {
 		clear:both;
+	}
+
+	footer {
+		width: 38%;
 	}
 
 /*	SIZE ADJUSTMENTS FOR MUSIC SEARCH PAGE */

@@ -22,7 +22,7 @@ nav {
 	}
 }
 
-.guitarBoy, .overview, .collabText, .becomeText, .userStories {
+.guitarBoy, .overview, .collabText, .becomeText, .userStories, .aboutInfo {
 	box-sizing: border-box;
 	padding: .3em 5%;
 }
@@ -52,6 +52,7 @@ nav {
 }
 
 .userStories {
+	height: 18em;
 	background: $secondary_color;
 	padding: 1.5em 1em;
 
@@ -75,7 +76,17 @@ nav {
 }
 
 footer {
-	padding: .3em 5%;
+	background: $secondary-color;
+	clear: both;
+
+	p {
+		color: $background-color;
+		display: block;
+		font-size: .75em;
+		padding-top: .5em;
+		text-align: center;
+
+	}
 }
 
 
