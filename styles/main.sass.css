@@ -54,6 +54,9 @@ table {
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
 */
+body {
+  background: #faf8f5; }
+
 h1, h2, h3 {
   color: #353F4C;
   font-family: "Museo", sans-serif; }
@@ -116,7 +119,7 @@ blockquote {
 
 #logInForm {
   font-family: "Museo-sans", sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 1em 0;
   color: white;
   background-color: rgba(10, 47, 69, 0.9);
@@ -153,9 +156,15 @@ blockquote {
   border-radius: .35em;
   background-color: rgba(10, 47, 69, 0.9);
   margin: 1em 20%; }
+  #addUser button {
+    background: #96ffa4;
+    border: none;
+    display: block;
+    font-size: 1.125em;
+    margin: .75em auto; }
 
 /* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
-.mixingBoards {
+.mixingBoards, .imageTrio {
   display: none; }
 
 .guitarBoy {
@@ -240,8 +249,14 @@ footer {
     margin-right: 0; }
   .overview {
     float: right;
+    padding-left: 0;
     width: 53%; }
-  .coupleSunset, .mixingBoards {
+  .imageTrio {
+    clear: both;
+    display: block;
+    float: left;
+    width: 45%; }
+  .coupleSunset, .mixingBoards, .imageTrio {
     width: 45%; }
   .collabText, .becomeText {
     width: 53%; }

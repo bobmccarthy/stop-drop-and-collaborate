@@ -17,6 +17,10 @@ $contrast-color: #FF5F49;
 $attention-color: #F8472E;
 $accept-color: #96ffa4;
 
+body {
+	background: #faf8f5;
+}
+
 h1, h2, h3 {
 	color: $primary-color;
 	font-family: "Museo", sans-serif;

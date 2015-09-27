@@ -14,7 +14,7 @@
 
 #logInForm{
 	font-family: "Museo-sans", sans-serif;
-	font-size: 2em;
+	font-size: 1.5em;
 	padding: 1em 0;
 	color: white;
 	background-color: rgba(10, 47, 69, .9);
@@ -62,6 +62,14 @@
 	border-radius: .35em;
 	background-color: rgba(10, 47, 69, .9);
 	margin: 1em 20%;
+
+	button {
+		background: $accept-color;
+		border: none;
+		display: block;
+		font-size: 1.125em;
+		margin: .75em auto;
+	}
 }
 
 
