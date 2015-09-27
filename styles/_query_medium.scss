@@ -61,7 +61,8 @@
 	}
 
 	.entry {
-		@include grid(1);
+		@include grid(4);
+		padding: 3%;
 	}
 
 	.row {

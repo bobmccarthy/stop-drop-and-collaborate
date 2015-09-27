@@ -1,5 +1,10 @@
 /*	STYLING FOR ACCOUNT OVERLAYS */
 
+/*	LOGIN AND LOGIN FORM REFER TO INITIAL OVERLAY
+	NEW ACCOUNT AND ADD USER REFER TO SECONDARY OVERLAY
+
+*/
+
 #logIn, #newAccount {
 
 	padding: 7em 0;
@@ -13,8 +18,9 @@
 }
 
 #instrument {
+	display: block;
 	margin: 1.75em auto;
-	width: 70%;
+	width: 28%;
 }
 
 #logInForm, #addUser {
