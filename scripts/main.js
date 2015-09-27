@@ -31,7 +31,7 @@ $(document).ready(function(){
 		routes: {
 			'' : 'goHome',
 			'account': 'findUser',
-			'collaborators' : 'goMusic',//THIS IS MAKING THE INTER SCREEN NOT COME UP
+			'collaborators': 'goMusic',//THIS IS MAKING THE INTER SCREEN NOT COME UP
 			'addUser': 'addUserScreen',
 			'musicians': 'goMusic',
 			'motioners': 'goMotion'
