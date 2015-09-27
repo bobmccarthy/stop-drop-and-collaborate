@@ -29,8 +29,8 @@
 	float: right;
 	padding: 0 .25em;
 
-	&:target {
-		animation: expand_rotation .5s linear 1 both;
+	&:active {
+		animation: expand_rotation .5s linear 1 forward;
 	}
 }
 
