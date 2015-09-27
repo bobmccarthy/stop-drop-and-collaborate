@@ -12776,7 +12776,7 @@ $(document).ready(function () {
 		goHome: function goHome() {
 			$('section').hide();
 			$('#homePage').show();
-			$('.carousel').toggle.slow();
+			$('.carousel').toggle('slow');
 		},
 
 		goMusicians: function goMusicians() {

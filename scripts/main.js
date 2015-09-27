@@ -106,7 +106,7 @@ $(document).ready(function(){
 		goHome: function() {
 			$('section').hide();
 			$('#homePage').show();
-			$('.carousel').toggle.slow();
+			$('.carousel').toggle('slow');
 			
 		},
 
