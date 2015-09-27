@@ -81,12 +81,10 @@ $(document).ready(function(){
 	var page = new Router ();
 	Backbone.history.start();
 
-
+	$('#carousel2').hide();
     var t = setInterval(function(){
-		$("#carousel ul").animate({marginLeft:-480},1000,function(){
-			$(this).find("li:last").after($(this).find("li:first"));
-			$(this).css({marginLeft:0});
-		})
+		$('#carousel1').toggle('left');
+		$('#carousel2').toggle('right');
 	},5000);
 
 
