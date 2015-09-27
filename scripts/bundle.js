@@ -12758,11 +12758,10 @@ $(document).ready(function () {
 	var page = new Router();
 	Backbone.history.start();
 
+	$('#carousel2').hide();
 	var t = setInterval(function () {
-		$("#carousel ul").animate({ marginLeft: -480 }, 1000, function () {
-			$(this).find("li:last").after($(this).find("li:first"));
-			$(this).css({ marginLeft: 0 });
-		});
+		$('#carousel1').toggle('left');
+		$('#carousel2').toggle('right');
 	}, 5000);
 
 	$('#logInForm').on('submit', function () {});
@@ -12771,7 +12770,7 @@ $(document).ready(function () {
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
-<<<<<<< HEAD
+
 		$.post('http://tiyfe.herokuapp.com/collections/testers', {
 			name: $name.val(),
 			instrument: $('#instrument').val(),
@@ -12783,20 +12782,6 @@ $(document).ready(function () {
 			$('section').hide();
 			$('#musiciansPage').show();
 			newMusician.fetch();
-=======
-		// newMusician.create({
-
-		// });		
-
-		console.log($('#instrument').val());
-
-		$.post('https://skills-up.herokuapp.com/musicians', {
-			name: $name.val(),
-			instrument_id: $('#instrument').val(),
-			contact: $email.val()
-		}).done(function (data) {
-			console.log(data);
->>>>>>> eb28c4143d7b96e3ac81c37aa281f986917fe14c
 		});
 	});
 
