@@ -43,4 +43,28 @@
 		clear:both;
 	}
 
+/*	SIZE ADJUSTMENTS FOR MUSIC SEARCH PAGE */
+
+	.musicHeader {
+		height: 12em;
+	}
+
+	.genInfo, .entry {
+		padding: 1.5em 10%;
+	} 
+
+	#musicianFilter {
+		display: block;
+		float: left;
+		font-family: "Museo-sans", sans-serif;
+		font-size: 1em;
+		margin: 1em auto;
+		width: 45%;
+	}
+
+	#musicianFilterButton {
+		width: 45%;
+		margin-bottom: .5em;
+	}
+
 }

@@ -40,4 +40,8 @@
 	.userStories {
 		width: 45%;
 	}
+
+	.entry {
+		@include grid(4);
+	}
 }
