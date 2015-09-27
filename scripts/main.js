@@ -10,17 +10,17 @@ var motionModel= require('./models/motion-model.js');
 	
 
 var newMusician = new musicianCollection();
-var newMotion = new motionCollection();
+// var newMotion = new motionCollection();
 
 
 var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
-var motionUrl = 'https://skills-up.herokuapp.com/motioners';
+// var motionUrl = 'https://skills-up.herokuapp.com/motioners';
 
 $(document).ready(function(){
 	var $musicianFilter = $('#musicianFilter');
 	var $musicianFilterButton=$('#musicianFilterButton');
-	var $motionFilter = $('#motionFilter');
-	var $motionFilterButton=$('#motionFilterButton');
+	// var $motionFilter = $('#motionFilter');
+	// var $motionFilterButton=$('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name=$('#name');
 	
@@ -90,19 +90,28 @@ $(document).ready(function(){
 	},5000);
 
 
+    $('#logInForm').on('submit', function(){
 
+    })
 
 	// var dropdownSelection = ('#instrument');
 
 	addUser.on('submit', function(e){
 		e.preventDefault();
-		newMusician.create({
-			name: $name.val(),
-			instrument: $instrument.val(),
-			contact: $email.val()
-		});		
-		
-
+		$.post('http://tiyfe.herokuapp.com/collections/testers',
+			{
+				name: $name.val(),
+				instrument: $('#instrument').val(),
+				contact: $email.val()	
+			}
+			).done(function(data){
+				console.log(data, 'posted');
+				$name.val('');
+				$email.val('');
+				$('section').hide();
+				$('#musiciansPage').show();
+				newMusician.fetch();
+			});
 	});
 
 	newMusician.on('add', function(newUser){
@@ -112,37 +121,37 @@ $(document).ready(function(){
 		$('#musiciansP').append(user1.$el);
 	});
 
-	newMotion.on('add', function(newUser){
-		// newUser.save();
-		var user1= new motionView({model: newUser});
-		// console.log('add workd');
-		$('#motionsP').append(user1.$el);
-	});
+	// newMotion.on('add', function(newUser){
+	// 	// newUser.save();
+	// 	var user1= new motionView({model: newUser});
+	// 	// console.log('add workd');
+	// 	$('#motionsP').append(user1.$el);
+	// });
 
 	$musicianFilterButton.on('click', function(){
 		// $('#musiciansP').html('');
-		console.log($musicianFilter.val().toString());
+		console.log($musicianFilter.val());
 		if ($musicianFilter.val().toString()===''){
 			$('.entry').show();
 		}
 		else{
 			$('.entry').hide();
-			$('.'+$musicianFilter.val().toString()+'').show();
+			$('.'+$musicianFilter.val()+'').show();
 		}
 		
 	});
-	$motionFilterButton.on('click', function(){
-		// $('#musiciansP').html('');
-		console.log($motionFilter.val().toString());
-		if ($motionFilter.val().toString()===''){
-			$('.entry').show();
-		}
-		else{
-			$('.entry').hide();
-			$('.'+$motionFilter.val().toString()+'').show();
-		}
+	// $motionFilterButton.on('click', function(){
+	// 	// $('#musiciansP').html('');
+	// 	console.log($motionFilter.val().toString());
+	// 	if ($motionFilter.val().toString()===''){
+	// 		$('.entry').show();
+	// 	}
+	// 	else{
+	// 		$('.entry').hide();
+	// 		$('.'+$motionFilter.val().toString()+'').show();
+	// 	}
 		
-	});
+	// });
 });
 
 
