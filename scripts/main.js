@@ -165,13 +165,13 @@ $(document).ready(function(){
 
 	$musicianFilterButton.on('click', function(){
 		// $('#musiciansP').html('');
-		console.log($musicianFilter.val());
+		console.log($musicianFilter.val().toString());
 		if ($musicianFilter.val().toString()===''){
 			$('.entry').show();
 		}
 		else{
 			$('.entry').hide();
-			$('.'+$musicianFilter.val()+'').show();
+			$('.'+$musicianFilter.val().toString()+'').show();
 		}
 		
 	});
