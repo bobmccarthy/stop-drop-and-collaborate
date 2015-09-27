@@ -41,13 +41,13 @@
 		</section>
 		
 		<section id="homePage">
-		<div class= "guitarBoy">
-			<nav>
-				<a href="#">Home</a>
-				<a href="#account">Account</a>
-			</nav>
-				<h1>SkillsUp</h1>
-		</div>
+			<div class= "guitarBoy">
+				<nav>
+					<a href="#">Home</a>
+					<a href="#account">Account</a>
+				</nav>
+					<h1>SkillsUp</h1>
+			</div>
 			<div class="overview">
 				<h2>Overview</h2>
 				<p>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn.</p>
@@ -58,7 +58,7 @@
 				<div class="collabText">
 					<h2>Creating in a vacuum?</h2>
 					<p>Master cleanse paleo ennui, synth tofu readymade flexitarian deep v direct trade try-hard kogi hoodie single-origin coffee Neutra occupy. Williamsburg selvage hella, cornhole hashtag actually listicle gastropub taxidermy cronut roof party banh mi. Kickstarter chillwave beard, scenester next level kitsch flexitarian art party occupy kogi Brooklyn</p>
-					<a href="#musicians"><button class="findButton">find a collaborator</button></a>
+					<a href="#collaborators"><button class="findButton">find a collaborator</button></a>
 				</div>
 			</div>
 
@@ -71,49 +71,40 @@
 				</div>
 			</div>
 			<div class ="userStories">
-			<blockquote>"Collab user stories and qoutes"</blockquote>
-			<img src="/images/avatar.png">
-			<p>-Rory McMahann</p>
-		</div>
-
-
+				<blockquote>"Collab user stories and qoutes"</blockquote>
+				<img src="/images/avatar.png">
+				<p>-Rory McMahann</p>
+			</div>
 	
-
-	
-
-	
-
-	<div class="footer">
-		<form id ="carousel">
-			<span class="userReviews">
-			<ul>
-				<li>"SKILLS UP TOOKE ME FROM HERO TO ZERO!" -Robert Plant</li></a>
-				<li>"SKILLS UP GAVE ME A REASON TO LIVE AGAIN!" -Kurt Cobain</li>
-				<li>"WITH SKILLS UP I WAS ABLE TO GET A MERCEDES!" -Janis Joplin</li>
-				<li>"SKILLS UP GAVE ME CONFIDENCE!" -Rivers Cuomo</li>
-			</ul></span>
-			<span> 
-				<ul>
-					<li>"BEFORE SKILLS UP THERE WAS NOTHING"!-John Lennon</li>
-				</ul>
-			</span>
-			
-			
-	</form>
-		</div>
-
-			
-		
-
-
-
-		
+			<div class="footer">
+				<form id ="carousel">
+					<span class="userReviews">
+						<ul>
+							<li>"SKILLS UP TOOKE ME FROM HERO TO ZERO!" -Robert Plant</li>
+							<li>"SKILLS UP GAVE ME A REASON TO LIVE AGAIN!" -Kurt Cobain</li>
+							<li>"WITH SKILLS UP I WAS ABLE TO GET A MERCEDES!" -Janis Joplin</li>
+							<li>"SKILLS UP GAVE ME CONFIDENCE!" -Rivers Cuomo</li>
+						</ul>
+					</span>
+					<span> 
+						<ul>
+							<li>"BEFORE SKILLS UP THERE WAS NOTHING"!-John Lennon</li>
+						</ul>
+					</span>		
+				</form>
+			</div>
+		</section>
+		<section id="collaborators">
+			<a href="#musicians"><button>Music</button></a>
+			<a href="#motioners"><button>Motion</button></a>
 		</section>
 		<section id="musiciansPage">
 			<nav>
 				<a href="#">Home</a>
 				<a href="#account">Account</a>
 			</nav>
+			<a href="#musicians"><button>Music</button></a>
+			<a href="#motioners"><button>Motion</button></a>
 			<select id="musicianFilter" type="dropdown">
 				<option value="">Select Kind Of Musician</option>
 				<option value="Guitar">Guitar</option>
@@ -131,6 +122,30 @@
 			<p>Hello Musicians</p>
 			<div id="musiciansP"></div>
 		</section>
+		<section id="motionersPage">
+			<nav>
+				<a href="#">Home</a>
+				<a href="#account">Account</a>
+			</nav>
+			<a href="#musicians"><button>Music</button></a>
+			<a href="#motioners"><button>Motion</button></a>
+			<select id="motionFilter" type="dropdown">
+				<option value="">Select Kind Of Motion</option>
+				<option value="Cinematographer">Cinematographer</option>
+				<option value="Actor / Actress">Actor / Actress</option>
+				<option value="Producer">Producer</option>
+				<option value="PA">PA</option>
+				<option value="Screenwriter">Screenwriter</option>
+				<option value="Locations (Scout)">Locations (Scout)</option>
+				<option value="Gear Rental">Gear Rental</option>
+				<option value="Film Editor">Film Editor</option>
+				<option value="Locations (Renter)">Locations (Renter)</option>
+			</select> 
+			<button id="motionFilterButton">Enter</button>
+			<p>Hello Motioners</p>
+			<div id="motionsP"></div>
+		</section>
+
 	<script type="text/javascript" src="/scripts/bundle.js"></script>
 
 </body>
