@@ -9,6 +9,7 @@
 
 	h4 {
 		display: inline-block;
+		font-size: .88em;
 		padding-left: 1em;
 	}
 
@@ -19,7 +20,9 @@
 }
 
 .userImage {
+	display: inline-block;
 	height: 3em;
+	vertical-align: middle;
 }
 
 #expand {
