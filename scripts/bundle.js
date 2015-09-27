@@ -12696,6 +12696,9 @@ var motionView = require('./views/motionView.js');
 var motionCollection = require('./collections/motion-collection.js');
 var motionModel = require('./models/motion-model.js');
 
+var newMusician = new musicianCollection();
+var newMotion = new motionCollection();
+
 var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
 var motionUrl = 'https://skills-up.herokuapp.com/motioners';
 
@@ -12709,7 +12712,52 @@ $(document).ready(function () {
 
 	var $email = $('#email');
 
-	var dropdownSelection = '#instrument';
+	var Router = Backbone.Router.extend({
+		routes: {
+			'': 'goHome',
+			'account': 'findUser',
+			'collaborators': 'goColab',
+			'addUser': 'addUserScreen',
+			'musicians': 'goMusic',
+			'motioners': 'goMotion'
+		},
+
+		goHome: function goHome() {
+			$('section').hide();
+			$('#homePage').show();
+			$('.carousel').toggle('slow');
+		},
+
+		goColab: function goColab() {
+			$('section').hide();
+			$('#collaborators').show();
+		},
+		goMusic: function goMusic() {
+			$('section').hide();
+			$('#musiciansPage').show();
+			newMusician.fetch();
+		},
+		goMotion: function goMotion() {
+			$('section').hide();
+			$('#motionersPage').show();
+			newMotion.fetch();
+		},
+		findUser: function findUser() {
+			$('section').hide();
+			$('#homePage').show();
+			$('#logIn').toggle('slow');
+		},
+		addUserScreen: function addUserScreen() {
+			$('section').hide();
+			$('#homePage').show();
+			$('#newAccount').toggle('slow');
+		}
+
+	});
+
+	var page = new Router();
+	Backbone.history.start();
+
 	var t = setInterval(function () {
 		$("#carousel ul").animate({ marginLeft: -480 }, 1000, function () {
 			$(this).find("li:last").after($(this).find("li:first"));
@@ -12718,9 +12766,6 @@ $(document).ready(function () {
 	}, 5000);
 
 	// var dropdownSelection = ('#instrument');
-
-	var newMusician = new musicianCollection();
-	var newMotion = new motionCollection();
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
@@ -12737,6 +12782,7 @@ $(document).ready(function () {
 		// console.log('add workd');
 		$('#musiciansP').append(user1.$el);
 	});
+
 	newMotion.on('add', function (newUser) {
 		// newUser.save();
 		var user1 = new motionView({ model: newUser });
@@ -12764,44 +12810,6 @@ $(document).ready(function () {
 			$('.' + $motionFilter.val().toString() + '').show();
 		}
 	});
-
-	var Router = Backbone.Router.extend({
-		routes: {
-			'': 'goHome',
-			'account': 'findUser',
-			'musicians': 'goMusicians',
-			'addUser': 'addUserScreen'
-		},
-
-		goHome: function goHome() {
-			$('section').hide();
-			$('#homePage').show();
-			$('.carousel').toggle.slow();
-		},
-
-		goMusicians: function goMusicians() {
-			$('section').hide();
-			$('#musiciansPage').show();
-			$('.carousel').hide();
-
-			newMusician.fetch();
-			newMotion.fetch();
-		},
-		findUser: function findUser() {
-			$('section').hide();
-			$('#homePage').show();
-			$('#logIn').toggle('slow');
-		},
-		addUserScreen: function addUserScreen() {
-			$('section').hide();
-			$('#homePage').show();
-			$('#newAccount').toggle('slow');
-		}
-
-	});
-
-	var page = new Router();
-	Backbone.history.start();
 });
 
 },{"./collections/motion-collection.js":4,"./collections/musician-collection.js":5,"./models/motion-model.js":7,"./models/musician-model.js":8,"./views/motionView.js":9,"./views/musicianView.js":10,"backbone":1,"jquery":3}],7:[function(require,module,exports){
