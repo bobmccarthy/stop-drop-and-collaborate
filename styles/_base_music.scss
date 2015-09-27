@@ -4,5 +4,35 @@
 	background-size: cover;
 	height: 10em;
 	text-align: center;
-	width: 100%;
+}
+
+.appLogo {
+	color: $secondary-color;
+	left: .25em;
+	padding: 0;
+	position: absolute;
+	top: .25em;
+}
+
+.appNav {
+	position: absolute;
+	right: .5em;
+	top: .5em;
+}
+
+.genInfo {
+	padding: 0 5%;
+}
+
+#musicianFilter {
+	display: block;
+	font-family: "Museo-sans", sans-serif;
+	font-size: 1em;
+	margin: 1em auto;
+	width: 80%;
+}
+
+#musicianFilterButton {
+	width: 80%;
+	margin-bottom: .5em;
 }

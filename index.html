@@ -46,6 +46,7 @@
 			<div class= "guitarBoy">
 				<nav>
 					<a href="#">Home</a>
+					<a href="#collaborators">Find</a>
 					<a href="#account">Account</a>
 				</nav>
 					<h1>SkillsUp</h1>
@@ -109,14 +110,20 @@
 		</section>
 
 		<section id="musiciansPage">
-			<nav>
+		<div class="musicHeader">
+			<h2 class="appLogo">SkillsUp</h2>
+		</div>
+			<nav class="appNav">
 				<a href="#">Home</a>
 				<a href="#account">Account</a>
 			</nav>
-			<a href="#musicians"><button>Music</button></a>
-			<a href="#motioners"><button>Motion</button></a>
+			<div class="genInfo">
+			<h3>Find a Collaborator</h3>
+			<p>Find a musician for your project, or just jam.</p>
+		<!-- <a href="#musicians"><button>Music</button></a>
+			<a href="#motioners"><button>Motion</button></a> -->
 			<select id="musicianFilter" type="dropdown">
-				<option value="">Select Kind Of Musician</option>
+				<option value="">Instrument Played</option>
 				<option value="Guitar">Guitar</option>
 				<option value="Drums">Drums</option>
 				<option value="Vocals">Vocals</option>
@@ -128,13 +135,12 @@
 				<option value="Banjo">Banjo</option>
 				<option value="Harmonica">Harmonica</option>
 			</select> 
-			<button id="musicianFilterButton">Enter</button>
-			<p>Hello Musicians</p>
+			<button id="musicianFilterButton">Search</button>
+			</div>
 			<div id="musiciansP"></div>
 		</section>
 
 		<section id="motionersPage">
-		<div class="musicHeader">
 			<nav>
 				<a href="#">Home</a>
 				<a href="#account">Account</a>
