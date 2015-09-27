@@ -12769,10 +12769,18 @@ $(document).ready(function () {
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
-		newMusician.create({
+		// newMusician.create({
+
+		// });		
+
+		console.log($('#instrument').val());
+
+		$.post('https://skills-up.herokuapp.com/musicians', {
 			name: $name.val(),
-			instrument: $instrument.val(),
+			instrument_id: $('#instrument').val(),
 			contact: $email.val()
+		}).done(function (data) {
+			console.log(data);
 		});
 	});
 
@@ -12833,7 +12841,7 @@ var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults: {
 		name: '',
-		instrument: '',
+		instrument_id: '',
 		contact: ''
 	},
 	urlRoot: 'https://skills-up.herokuapp.com/musicians',
