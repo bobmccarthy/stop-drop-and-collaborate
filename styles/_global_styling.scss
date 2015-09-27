@@ -52,9 +52,9 @@ h4 {
 
 p {
 	color: $secondary-color;
-	font-size: 1em;
+	font-size: 1.15em;
 	font-weight: 300;
-	line-height: 1.25em;
+	line-height: 1.45em;
 	padding-bottom: 1.5em;
 }
 
@@ -64,7 +64,7 @@ a {
 	text-decoration: none;
 
 	&:hover {
-		color: shade($contrast-color, 15%);
+		color: shade($contrast-color, 25%);
 	}
 
 }

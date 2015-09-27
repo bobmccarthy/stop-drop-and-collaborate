@@ -45,6 +45,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+@keyframes expand_rotation {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(135deg); } }
+
 /* 	GLOBAL STYLES AND VARIABLES ARE LOCATED ON THIS STYLESHEET */
 /* 	
 	***DO NOT CHANGE WITHOUT CONTACTING COREY***
@@ -81,9 +87,9 @@ h4 {
 
 p {
   color: #1F6C6E;
-  font-size: 1em;
+  font-size: 1.15em;
   font-weight: 300;
-  line-height: 1.25em;
+  line-height: 1.45em;
   padding-bottom: 1.5em; }
 
 a {
@@ -91,7 +97,7 @@ a {
   font-family: "Museo-sans", sans-serif;
   text-decoration: none; }
   a:hover {
-    color: #d9513e; }
+    color: #bf4737; }
 
 button {
   background: none;
@@ -167,9 +173,17 @@ blockquote {
     font-size: 4em;
     font-family: "museo"; }
 
+nav a {
+  margin-right: 1.5em; }
+  nav a:last-child {
+    margin-right: .5em; }
+
 .guitarBoy, .overview, .collabText, .becomeText, .userStories {
   box-sizing: border-box;
   padding: .3em 5%; }
+
+.overview {
+  padding-top: 1.5em; }
 
 .coupleSunset {
   width: 100%; }
@@ -180,6 +194,9 @@ blockquote {
     color: #2a9396; }
   .collabText button {
     margin-bottom: .5em; }
+
+.fakeAddUser {
+  margin-bottom: .5em; }
 
 .userStories {
   background: #1F6C6E;
@@ -213,7 +230,7 @@ footer {
   position: absolute;
   top: .25em; }
 
-.appNav {
+nav {
   position: absolute;
   right: .5em;
   top: .5em; }
@@ -238,14 +255,24 @@ footer {
   padding: 1.5em 5%; }
   .entry:nth-of-type(odd) {
     background: #e1e2e4; }
+  .entry h4 {
+    display: inline-block;
+    padding-left: 1em; }
+  .entry .userInstrument {
+    display: inline-block;
+    padding-left: 1em; }
 
 .userImage {
   height: 3em; }
 
 #expand {
+  border: none;
   box-sizing: border-box;
+  font-size: 1.5em;
   float: right;
   padding: 0 0.25em; }
+  #expand:target {
+    animation: expand_rotation 0.5s linear 1 both; }
 
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
@@ -275,6 +302,10 @@ footer {
   /*	SIZE ADJUSTMENTS FOR MUSIC SEARCH PAGE */
   .musicHeader {
     height: 12em; }
+  .appLogo {
+    font-size: 2.25em; }
+  .appNav {
+    font-size: 1.25em; }
   .genInfo, .entry {
     padding: 1.5em 10%; }
   #musicianFilter {
@@ -290,12 +321,15 @@ footer {
 
 @media screen and (min-width: 938px) {
   .guitarBoy {
-    width: 45%;
-    margin-right: 0; }
+    display: inline-block;
+    margin-right: 0;
+    width: 45%; }
   .overview {
+    display: inline;
     float: right;
+    padding-top: 9.5em;
     padding-left: 0;
-    width: 53%; }
+    width: 48%; }
   .imageTrio {
     clear: both;
     display: block;
@@ -304,7 +338,8 @@ footer {
   .coupleSunset, .mixingBoards, .imageTrio {
     width: 45%; }
   .collabText, .becomeText {
-    width: 53%; }
+    padding-top: 4em;
+    width: 48%; }
     .collabText h2, .becomeText h2 {
       padding-top: 0; }
     .collabText p, .becomeText p {
@@ -313,6 +348,14 @@ footer {
       bottom: 0; }
   .userStories {
     width: 45%; }
+  /*	ADJUSTMENTS FOR MUSICIANS SEARCH AND RESULTS PAGE */
+  .musicHeader {
+    height: 16em;
+    background-position: 30% 20%; }
+  .appLogo {
+    font-size: 3em; }
+  .appNav {
+    font-size: 1.5em; }
   .entry {
     float: left;
     margin-right: 2%;
