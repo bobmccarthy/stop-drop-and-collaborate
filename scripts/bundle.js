@@ -12697,16 +12697,16 @@ var motionCollection = require('./collections/motion-collection.js');
 var motionModel = require('./models/motion-model.js');
 
 var newMusician = new musicianCollection();
-var newMotion = new motionCollection();
+// var newMotion = new motionCollection();
 
 var musicianUrl = 'https://skills-up.herokuapp.com/musicians';
-var motionUrl = 'https://skills-up.herokuapp.com/motioners';
+// var motionUrl = 'https://skills-up.herokuapp.com/motioners';
 
 $(document).ready(function () {
 	var $musicianFilter = $('#musicianFilter');
 	var $musicianFilterButton = $('#musicianFilterButton');
-	var $motionFilter = $('#motionFilter');
-	var $motionFilterButton = $('#motionFilterButton');
+	// var $motionFilter = $('#motionFilter');
+	// var $motionFilterButton=$('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name = $('#name');
 
@@ -12765,10 +12765,25 @@ $(document).ready(function () {
 		});
 	}, 5000);
 
+	$('#logInForm').on('submit', function () {});
+
 	// var dropdownSelection = ('#instrument');
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
+<<<<<<< HEAD
+		$.post('http://tiyfe.herokuapp.com/collections/testers', {
+			name: $name.val(),
+			instrument: $('#instrument').val(),
+			contact: $email.val()
+		}).done(function (data) {
+			console.log(data, 'posted');
+			$name.val('');
+			$email.val('');
+			$('section').hide();
+			$('#musiciansPage').show();
+			newMusician.fetch();
+=======
 		// newMusician.create({
 
 		// });		
@@ -12781,6 +12796,7 @@ $(document).ready(function () {
 			contact: $email.val()
 		}).done(function (data) {
 			console.log(data);
+>>>>>>> eb28c4143d7b96e3ac81c37aa281f986917fe14c
 		});
 	});
 
@@ -12791,33 +12807,35 @@ $(document).ready(function () {
 		$('#musiciansP').append(user1.$el);
 	});
 
-	newMotion.on('add', function (newUser) {
-		// newUser.save();
-		var user1 = new motionView({ model: newUser });
-		// console.log('add workd');
-		$('#motionsP').append(user1.$el);
-	});
+	// newMotion.on('add', function(newUser){
+	// 	// newUser.save();
+	// 	var user1= new motionView({model: newUser});
+	// 	// console.log('add workd');
+	// 	$('#motionsP').append(user1.$el);
+	// });
 
 	$musicianFilterButton.on('click', function () {
 		// $('#musiciansP').html('');
-		console.log($musicianFilter.val().toString());
+		console.log($musicianFilter.val());
 		if ($musicianFilter.val().toString() === '') {
 			$('.entry').show();
 		} else {
 			$('.entry').hide();
-			$('.' + $musicianFilter.val().toString() + '').show();
+			$('.' + $musicianFilter.val() + '').show();
 		}
 	});
-	$motionFilterButton.on('click', function () {
-		// $('#musiciansP').html('');
-		console.log($motionFilter.val().toString());
-		if ($motionFilter.val().toString() === '') {
-			$('.entry').show();
-		} else {
-			$('.entry').hide();
-			$('.' + $motionFilter.val().toString() + '').show();
-		}
-	});
+	// $motionFilterButton.on('click', function(){
+	// 	// $('#musiciansP').html('');
+	// 	console.log($motionFilter.val().toString());
+	// 	if ($motionFilter.val().toString()===''){
+	// 		$('.entry').show();
+	// 	}
+	// 	else{
+	// 		$('.entry').hide();
+	// 		$('.'+$motionFilter.val().toString()+'').show();
+	// 	}
+
+	// });
 });
 
 },{"./collections/motion-collection.js":4,"./collections/musician-collection.js":5,"./models/motion-model.js":7,"./models/musician-model.js":8,"./views/motionView.js":9,"./views/musicianView.js":10,"backbone":1,"jquery":3}],7:[function(require,module,exports){
@@ -12844,7 +12862,11 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
+<<<<<<< HEAD
 	urlRoot: 'https://tiyfe.herokuapp.com/collections/testers',
+=======
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
+>>>>>>> 20f4575cb717c1060e15fe84a62e86c3ee2a7177
 	idAttribute: 'id'
 });
 
@@ -12904,7 +12926,7 @@ module.exports = Backbone.View.extend({
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 
-		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div><span>' + userEmail + '</span></div><div id="desc">I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</div></div>');
+		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div id="desc"><div><span>' + userEmail + '</span></div><p>I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p></div></div>');
 		this.$('#desc').hide();
 	},
 	expander: function expander() {
