@@ -18,7 +18,7 @@
 	padding: 1em 0;
 	color: white;
 	background-color: rgba(10, 47, 69, .9);
-	border-radius: .25em;
+	border-radius: .35em;
 	margin: 0 20%;
 	
 	>div > p {
@@ -31,7 +31,11 @@
 	}
 	
 	>button {
+		background: $accept-color;
+		border: none;
 		display: block;
+		font-size: .75em;
+		margin: .75em auto;
 	}
 	
 	>a {
@@ -55,7 +59,7 @@
 
 	padding: 1em 0;
 	color: white;
-	border-radius: .25em;
+	border-radius: .35em;
 	background-color: rgba(10, 47, 69, .9);
 	margin: 1em 20%;
 }
