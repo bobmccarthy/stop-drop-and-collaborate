@@ -54,6 +54,9 @@ table {
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
 */
+body {
+  background: #faf8f5; }
+
 h1, h2, h3 {
   color: #353F4C;
   font-family: "Museo", sans-serif; }
@@ -105,7 +108,7 @@ blockquote {
   font-weight: 700; }
 
 /*	STYLING FOR ACCOUNT OVERLAYS */
-#logIn {
+#logIn, #newAccount {
   padding: 7em 0;
   position: absolute;
   height: 100%;
@@ -114,48 +117,35 @@ blockquote {
   text-align: center;
   z-index: 1; }
 
-#logInForm {
+#instrument {
+  margin: 1.75em auto;
+  width: 70%; }
+
+#logInForm, #addUser {
   font-family: "Museo-sans", sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 1em 0;
   color: white;
   background-color: rgba(10, 47, 69, 0.9);
   border-radius: .35em;
   margin: 0 20%; }
-  #logInForm > div > p {
+  #logInForm > div > p, #addUser > div > p {
     margin: 0;
     padding: .5em; }
-  #logInForm > .noAcc {
+  #logInForm > .noAcc, #addUser > .noAcc {
     font-size: .5em; }
-  #logInForm > button {
+  #logInForm > button, #addUser > button {
     background: #96ffa4;
     border: none;
     display: block;
     font-size: .75em;
     margin: .75em auto; }
-  #logInForm > a {
+  #logInForm > a, #addUser > a {
     width: 2em;
     font-size: .5em; }
 
-#newAccount {
-  padding-top: 7em;
-  position: absolute;
-  margin-top: -4em;
-  height: 500%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  z-index: 1; }
-
-#addUser {
-  padding: 1em 0;
-  color: white;
-  border-radius: .35em;
-  background-color: rgba(10, 47, 69, 0.9);
-  margin: 1em 20%; }
-
 /* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
-.mixingBoards {
+.mixingBoards, .imageTrio {
   display: none; }
 
 .guitarBoy {
@@ -208,6 +198,13 @@ blockquote {
 footer {
   padding: .3em 5%; }
 
+.musicHeader {
+  background-image: url("/images/putsMac.jpg");
+  background-size: cover;
+  height: 10em;
+  text-align: center;
+  width: 100%; }
+
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
   .mixingBoards {
@@ -240,8 +237,14 @@ footer {
     margin-right: 0; }
   .overview {
     float: right;
+    padding-left: 0;
     width: 53%; }
-  .coupleSunset, .mixingBoards {
+  .imageTrio {
+    clear: both;
+    display: block;
+    float: left;
+    width: 45%; }
+  .coupleSunset, .mixingBoards, .imageTrio {
     width: 45%; }
   .collabText, .becomeText {
     width: 53%; }
