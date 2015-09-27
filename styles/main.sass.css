@@ -116,7 +116,7 @@ blockquote {
 
 #logInForm {
   font-family: "Museo-sans", sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 1em 0;
   color: white;
   background-color: rgba(10, 47, 69, 0.9);
@@ -153,6 +153,12 @@ blockquote {
   border-radius: .35em;
   background-color: rgba(10, 47, 69, 0.9);
   margin: 1em 20%; }
+  #addUser button {
+    background: #96ffa4;
+    border: none;
+    display: block;
+    font-size: 1.125em;
+    margin: .75em auto; }
 
 /* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
 .mixingBoards {
@@ -240,6 +246,7 @@ footer {
     margin-right: 0; }
   .overview {
     float: right;
+    padding-left: 0;
     width: 53%; }
   .coupleSunset, .mixingBoards {
     width: 45%; }
