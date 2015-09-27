@@ -23,6 +23,8 @@ $(document).ready(function(){
 	// var $motionFilterButton=$('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name=$('#name');
+
+
 	
 	var $email=$('#email');
 	$('#newAccount').hide();
@@ -62,7 +64,7 @@ $(document).ready(function(){
 		goMotion: function(){
 			$('section').hide();
 			$('#motionersPage').show();
-			newMotion.fetch();
+			// newMotion.fetch();
 			
 		},
 		findUser: function() {
@@ -130,21 +132,22 @@ $(document).ready(function(){
 
 	addUser.on('submit', function(e){
 		e.preventDefault();
-
+		
 		$.post(
-			'http://tiyfe.herokuapp.com/collections/testers',
+			'http://skills-up.herokuapp.com/musicians',
 			{
 				name: $name.val(),
-				instrument: $('#instrument').val(),
+				instrument_id: $('#instrument').val(),
 				contact: $email.val()	
 			}
 			).done(function(data){
-				console.log(data, 'posted');
+				console.log('posted');
 				$name.val('');
 				$email.val('');
 				$('section').hide();
 				$('#musiciansPage').show();
-				newMusician.fetch();
+				
+				window.location = '#musicians';
 			});
 
 	});
