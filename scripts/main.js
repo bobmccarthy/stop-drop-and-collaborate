@@ -21,6 +21,18 @@ $(document).ready(function(){
 	var $name=$('#name');
 	
 	var $email=$('#email');
+
+	var dropdownSelection = ('#instrument');
+            var t = setInterval(function(){
+		$("#carousel ul").animate({marginLeft:-480},1000,function(){
+			$(this).find("li:last").after($(this).find("li:first"));
+			$(this).css({marginLeft:0});
+		})
+	},5000);
+
+
+
+
 	// var dropdownSelection = ('#instrument');
 	
 
@@ -94,14 +106,18 @@ $(document).ready(function(){
 		goHome: function() {
 			$('section').hide();
 			$('#homePage').show();
+			$('.carousel').toggle.slow();
 			
 		},
 
 		goMusicians: function () {
 			$('section').hide();
 			$('#musiciansPage').show();
+			$('.carousel').hide();
+
 			newMusician.fetch();
 			newMotion.fetch();
+
 		},
 		findUser: function() {
 			$('section').hide();
@@ -127,7 +143,7 @@ $(document).ready(function(){
 
 
 
-});
+})
 
 
 
