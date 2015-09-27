@@ -1,7 +1,7 @@
 $tot-width: 100%; 	//Total width of all columns combined
-$col-num: 12;		//Total number of columns
+$col-tot: 12;		//Total number of columns
 $gut-width: 2%;		//gutter width
-$col-width: ($tot-width - (($col-num - 1) * $gut-width)) / $col-num;
+$col-width: ($tot-width - (($col-tot - 1) * $gut-width)) / $col-tot;
 
 @mixin grid($col-num) {
 	float: left;
