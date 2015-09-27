@@ -12771,7 +12771,7 @@ $(document).ready(function () {
 
 	addUser.on('submit', function (e) {
 		e.preventDefault();
-<<<<<<< HEAD
+
 		$.post('http://tiyfe.herokuapp.com/collections/testers', {
 			name: $name.val(),
 			instrument: $('#instrument').val(),
@@ -12783,20 +12783,6 @@ $(document).ready(function () {
 			$('section').hide();
 			$('#musiciansPage').show();
 			newMusician.fetch();
-=======
-		// newMusician.create({
-
-		// });		
-
-		console.log($('#instrument').val());
-
-		$.post('https://skills-up.herokuapp.com/musicians', {
-			name: $name.val(),
-			instrument_id: $('#instrument').val(),
-			contact: $email.val()
-		}).done(function (data) {
-			console.log(data);
->>>>>>> eb28c4143d7b96e3ac81c37aa281f986917fe14c
 		});
 	});
 
@@ -12862,11 +12848,7 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
-<<<<<<< HEAD
-	urlRoot: 'https://tiyfe.herokuapp.com/collections/testers',
-=======
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
->>>>>>> 20f4575cb717c1060e15fe84a62e86c3ee2a7177
 	idAttribute: 'id'
 });
 
