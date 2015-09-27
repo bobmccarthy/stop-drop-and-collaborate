@@ -23,6 +23,8 @@ $(document).ready(function(){
 	// var $motionFilterButton=$('#motionFilterButton');
 	var addUser = $('#addUser');
 	var $name=$('#name');
+
+	
 	
 	var $email=$('#email');
 	$('#newAccount').hide();
@@ -62,7 +64,7 @@ $(document).ready(function(){
 		goMotion: function(){
 			$('section').hide();
 			$('#motionersPage').show();
-			newMotion.fetch();
+			// newMotion.fetch();
 			
 		},
 		findUser: function() {
