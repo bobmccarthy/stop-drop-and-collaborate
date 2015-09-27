@@ -1,4 +1,4 @@
-$tot-width: 100%; 	//Total width of all columns combined
+$tot-width: 90%; 	//Total width of all columns combined
 $col-tot: 12;		//Total number of columns
 $gut-width: 2%;		//gutter width
 $col-width: ($tot-width - (($col-tot - 1) * $gut-width)) / $col-tot;

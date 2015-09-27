@@ -123,6 +123,10 @@ blockquote {
   font-weight: 700; }
 
 /*	STYLING FOR ACCOUNT OVERLAYS */
+/*	LOGIN AND LOGIN FORM REFER TO INITIAL OVERLAY
+	NEW ACCOUNT AND ADD USER REFER TO SECONDARY OVERLAY
+
+*/
 #logIn, #newAccount {
   padding: 7em 0;
   position: absolute;
@@ -133,8 +137,9 @@ blockquote {
   z-index: 1; }
 
 #instrument {
+  display: block;
   margin: 1.75em auto;
-  width: 70%; }
+  width: 28%; }
 
 #logInForm, #addUser {
   font-family: "Museo-sans", sans-serif;
@@ -359,7 +364,8 @@ nav {
   .entry {
     float: left;
     margin-right: 2%;
-    width: 6.5%; }
+    width: 28.66667%;
+    padding: 3%; }
     .entry:last-child {
       margin-right: 0; }
   .row {
