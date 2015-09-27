@@ -88,8 +88,28 @@ $(document).ready(function(){
 	},5000);
 
 
-    $('#logInForm').on('submit', function(){
-
+    $('#logInForm').on('submit', function(e){
+    	e.preventDefault();
+    	$.get(
+		'http://tiyfe.herokuapp.com/collections/SkillsUp-users',
+		function(response) {
+			for (var j=0; j<response.length; j++){
+				if ($('.logUserName').val()===''||$('.logPassword')===''){
+					$('.error').text('Please Fill Both Fields');
+					$('.logUserName').val('');
+					$('.logPassword').val('');
+				}
+				else if ($('.logUserName').val()===response[j].name && $('.logPassword').val()===response[j].password){
+					$('#logIn').hide();
+					$('.logUserName').val('');
+					$('.logPassword').val('');
+					$('.error').text('');
+				}
+			}
+			
+		},
+		'json'
+		);
     })
 
 	// var dropdownSelection = ('#instrument');

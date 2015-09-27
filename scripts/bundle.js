@@ -12764,7 +12764,23 @@ $(document).ready(function () {
 		$('#carousel2').toggle('right');
 	}, 5000);
 
-	$('#logInForm').on('submit', function () {});
+	$('#logInForm').on('submit', function (e) {
+		e.preventDefault();
+		$.get('http://tiyfe.herokuapp.com/collections/SkillsUp-users', function (response) {
+			for (var j = 0; j < response.length; j++) {
+				if ($('.logUserName').val() === '' || $('.logPassword') === '') {
+					$('.error').text('Please Fill Both Fields');
+					$('.logUserName').val('');
+					$('.logPassword').val('');
+				} else if ($('.logUserName').val() === response[j].name && $('.logPassword').val() === response[j].password) {
+					$('#logIn').hide();
+					$('.logUserName').val('');
+					$('.logPassword').val('');
+					$('.error').text('');
+				}
+			}
+		}, 'json');
+	});
 
 	// var dropdownSelection = ('#instrument');
 
@@ -12847,13 +12863,7 @@ module.exports = Backbone.Model.extend({
 		instrument_id: '',
 		contact: ''
 	},
-<<<<<<< HEAD
 	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
-=======
-
-	urlRoot: 'http://tiyfe.herokuapp.com/collections/testers',
-
->>>>>>> 2c69d2b650d20cbeb570a23fa7831fc7c95827f6
 	idAttribute: 'id'
 });
 
@@ -12913,7 +12923,7 @@ module.exports = Backbone.View.extend({
 		var userInstrument = this.model.get('instrument');
 		var userEmail = this.model.get('contact');
 
-		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><div><span>' + userName + '</span></div><div><span>' + userInstrument + '</span></div><div id="desc"><div><span>' + userEmail + '</span></div><p>I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p></div></div>');
+		this.$el.html('<div class="' + userInstrument + ' entry"><button id="expand">+</button><img class="userImage" src="../images/default_usr_icon_sm.png"><h4>' + userName + '</h4><p class="userInstrument">' + userInstrument + '</p><div id="desc"><p>' + userEmail + '</p><p>I am a rockstar musician. I have been in plenty of bands and stuff. What else... Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</p></div></div>');
 		this.$('#desc').hide();
 	},
 	expander: function expander() {
