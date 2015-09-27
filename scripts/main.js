@@ -42,7 +42,9 @@ $(document).ready(function(){
 			$('section').hide();
 			$('#homePage').show();
 			$('.carousel').toggle('slow');
-			
+			$('.logUserName').val('');
+			$('.logPassword').val('');
+			$('.error').text('');
 		},
 
 		goColab: function () {
@@ -93,7 +95,11 @@ $(document).ready(function(){
     	$.get(
 		'http://tiyfe.herokuapp.com/collections/SkillsUp-users',
 		function(response) {
+
 			for (var j=0; j<response.length; j++){
+				console.log(response.length);
+				console.log(response[j].name);
+				console.log(response[j].password);
 				if ($('.logUserName').val()===''||$('.logPassword')===''){
 					$('.error').text('Please Fill Both Fields');
 					$('.logUserName').val('');
@@ -104,6 +110,13 @@ $(document).ready(function(){
 					$('.logUserName').val('');
 					$('.logPassword').val('');
 					$('.error').text('');
+					console.log('success');
+					
+				}
+				else{
+
+					$('.logPassword').val('');
+					$('.error').text('Name and/or Password does not match');
 				}
 			}
 			
