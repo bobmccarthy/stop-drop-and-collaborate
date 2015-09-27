@@ -54,6 +54,9 @@ table {
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
 */
+body {
+  background: #faf8f5; }
+
 h1, h2, h3 {
   color: #353F4C;
   font-family: "Museo", sans-serif; }
@@ -161,7 +164,7 @@ blockquote {
     margin: .75em auto; }
 
 /* 	STYLESHEET FOR ALL ITEMS THAT ARE HIDDEN BY DEFAULT */
-.mixingBoards {
+.mixingBoards, .imageTrio {
   display: none; }
 
 .guitarBoy {
@@ -248,7 +251,12 @@ footer {
     float: right;
     padding-left: 0;
     width: 53%; }
-  .coupleSunset, .mixingBoards {
+  .imageTrio {
+    clear: both;
+    display: block;
+    float: left;
+    width: 45%; }
+  .coupleSunset, .mixingBoards, .imageTrio {
     width: 45%; }
   .collabText, .becomeText {
     width: 53%; }
