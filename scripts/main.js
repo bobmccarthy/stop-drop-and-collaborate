@@ -25,7 +25,8 @@ $(document).ready(function(){
 	var $name=$('#name');
 	
 	var $email=$('#email');
-
+	$('#newAccount').hide();
+	$('#logIn').hide();
 
 	var Router = Backbone.Router.extend({
 		routes: {
