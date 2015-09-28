@@ -4,6 +4,10 @@
 
 	.mixingBoards {
 		display: block;
+		background: url("/images/mixingBoards.jpg");
+		background-size: cover;
+		background-position: 70% 50%;
+		height: 25em;
 	}
 
 	.coupleSunset, .mixingBoards, .userStories {
@@ -11,6 +15,13 @@
 		margin-right: 2%;
 		width: 38%;
 	}
+
+	.coupleSunset {
+		background-position: 80% 90%;
+		height: 31em;
+	}
+
+
 
 	.overview, .collabText, .becomeText, .aboutInfo {
 		background: none;

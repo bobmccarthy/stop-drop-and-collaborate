@@ -24,15 +24,18 @@ nav {
 
 .guitarBoy, .overview, .collabText, .becomeText, .userStories, .aboutInfo {
 	box-sizing: border-box;
-	padding: .3em 5%;
+	padding: 2em 5%;
 }
 
 .overview {
-	padding-top: 1.5em;
+	padding: 1.5em;
 }
 
 .coupleSunset {
-	width: 100%;
+	background: url("/images/roughDraftCoupleSunset.jpg");
+	background-size: cover;
+	background-position: 50% 70%;
+	height: 15em;
 }
 
 .collabText {
