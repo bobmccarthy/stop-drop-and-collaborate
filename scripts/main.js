@@ -23,13 +23,39 @@ $(document).ready(function(){
 	var $email=$('#email');
 
 	var dropdownSelection = ('#instrument');
-            var t = setInterval(function(){
-		$("#carousel ul").animate({marginLeft:-480},1000,function(){
-			$(this).find("li:last").after($(this).find("li:first"));
-			$(this).css({marginLeft:0});
-		})
-	},5000);
+	var carousel = (function () {
+        var counter = 0,
+            i,
+            j,
+            slides =  $("#carousel .slide"),
+            slidesLen = slides.length - 1;
+        for (i = 0, j = 9999; i &lt; slides.length; i += 1, j -= 1) {
+            $(slides[i]).css("z-index", j);
+        }
+        return {
+            startSlideshow: function () {
+                window.setInterval(function () {
+                    if (counter === 0) {
+                        slides.eq(counter).fadeOut();
+                        counter += 1;
+                    } else if (counter === slidesLen) {
+                        counter = 0;
+                        slides.eq(counter).fadeIn(function () {
+                            slides.fadeIn();
+                        });
+                    } else {
+                        slides.eq(counter).fadeOut();
+                        counter += 1;
+                    }
+                }, 5000);
+            }
+        };
+    }());
+    slideshow.startSlideshow();
 
+}());
+           
+		
 
 
 
@@ -113,7 +139,7 @@ $(document).ready(function(){
 		goMusicians: function () {
 			$('section').hide();
 			$('#musiciansPage').show();
-			$('.carousel').hide();
+			$('#carousel').hide();
 
 			newMusician.fetch();
 			newMotion.fetch();

@@ -12782,7 +12782,7 @@ $(document).ready(function () {
 		goMusicians: function goMusicians() {
 			$('section').hide();
 			$('#musiciansPage').show();
-			$('.carousel').hide();
+			$('#carousel').hide();
 
 			newMusician.fetch();
 			newMotion.fetch();
