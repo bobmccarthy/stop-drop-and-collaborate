@@ -18,6 +18,10 @@ $attention-color: #F8472E;
 $accept-color: #96ffa4;
 $background-color: #faf8f5;
 
+#newAccount, #logIn {
+	display: none;
+}
+
 body {
 	background: $background-color;
 }

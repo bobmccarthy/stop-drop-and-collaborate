@@ -60,6 +60,9 @@ table {
 	CONTRAST COLOR: USED FOR MEDIUM CONTRASTING ELEMENTS TO BE USED SPARINGLY
 	ATTENTION COLOR: A HIGH-CONTRASTING RED TO BE USED SPARINGLY
 */
+#newAccount, #logIn {
+  display: none; }
+
 body {
   background: #faf8f5; }
 
