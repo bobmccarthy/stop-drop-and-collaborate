@@ -185,13 +185,16 @@ nav a {
 
 .guitarBoy, .overview, .collabText, .becomeText, .userStories, .aboutInfo {
   box-sizing: border-box;
-  padding: .3em 5%; }
+  padding: 2em 5%; }
 
 .overview {
-  padding-top: 1.5em; }
+  padding: 1.5em; }
 
 .coupleSunset {
-  width: 100%; }
+  background: url("/images/roughDraftCoupleSunset.jpg");
+  background-size: cover;
+  background-position: 50% 70%;
+  height: 15em; }
 
 .collabText {
   background: #120726; }
@@ -270,13 +273,16 @@ nav {
     background: #e1e2e4; }
   .entry h4 {
     display: inline-block;
+    font-size: .88em;
     padding-left: 1em; }
   .entry .userInstrument {
     display: inline-block;
     padding-left: 1em; }
 
 .userImage {
-  height: 3em; }
+  display: inline-block;
+  height: 3em;
+  vertical-align: middle; }
 
 #expand {
   border: none;
@@ -290,11 +296,18 @@ nav {
 /*	1ST MEDIA QUERY THAT COVERS SMALL/MEDIUM SCREEN SIZES */
 @media screen and (min-width: 632px) {
   .mixingBoards {
-    display: block; }
+    display: block;
+    background: url("/images/mixingBoards.jpg");
+    background-size: cover;
+    background-position: 70% 50%;
+    height: 25em; }
   .coupleSunset, .mixingBoards, .userStories {
     float: left;
     margin-right: 2%;
     width: 38%; }
+  .coupleSunset {
+    background-position: 80% 90%;
+    height: 31em; }
   .overview, .collabText, .becomeText, .aboutInfo {
     background: none;
     display: block;
@@ -378,9 +391,13 @@ nav {
   .entry {
     float: left;
     margin-right: 2%;
-    width: 28.66667%;
+    width: 32%;
+    border-radius: .55em;
+    border-right: 2px solid #faf8f5;
+    box-sizing: border-box;
     padding: 3%; }
     .entry:last-child {
       margin-right: 0; }
   .row {
+    overflow: hidden;
     padding-bottom: 2%; } }
