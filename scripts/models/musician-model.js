@@ -4,9 +4,12 @@ var Backbone = require('backbone');
 module.exports = Backbone.Model.extend({
 	defaults:{
 		name: '',
-		instrument_id: '',
-		contact: ''
+		password: '',
+		contact: '',
+		instrument: '',
+		description: ''
+
 	},
-	urlRoot: 'http://skills-up.herokuapp.com/musicians',
-	idAttribute: 'id'
+	urlRoot: 'http://tiyfe.herokuapp.com/collections/SkillsUp',
+	idAttribute: '_id'
 })

@@ -24,20 +24,26 @@
 			<form id="addUser">
 				<div><p>Username</p></div>
 				<input id="name" type="text" placeholder="Enter Username">
-				<div><p>Password</p></div>
+				<div><p>Email</p></div>
 				<input id="email" type="text" placeholder="Enter email">
+				<div><p>Password</p></div>
+				<input id="newPassword" type="text" placeholder="Password">
 				<select id="instrument" type="dropdown">
-					<option value="1">Guitar</option>
-					<option value="2">Drums</option>
-					<option value="3">Vocals</option>
-					<option value="4">Bass</option>
-					<option value="5">Keys</option>
-					<option value="6">Electronic Production</option>
-					<option value="7">Gear Rental</option>
-					<option value="8">MC</option>
-					<option value="9">Banjo</option>
-					<option value="10">Harmonica</option>
+					<option value="Guitar">Guitar</option>
+					<option value="Drums">Drums</option>
+					<option value="Vocals">Vocals</option>
+					<option value="Bass">Bass</option>
+					<option value="Keys">Keys</option>
+					<option value="Electronic Production">Electronic Production</option>
+					<option value="Gear Rental">Gear Rental</option>
+					<option value="MC">MC</option>
+					<option value="Banjo">Banjo</option>
+					<option value="Harmonica">Harmonica</option>
 				</select>
+				<div><p>About You</p></div>
+				<div><textarea type="text" id="aboutYou"></textarea></div>
+				<input id="userAvatar" type="text" placeholder="Image URL">
+				<div><p class="createError"></p></div>
 				<button>add user</button>
 				<a id="cancelNewAcc" href="#">Cancel</a>
 			</form>
@@ -144,7 +150,7 @@
 		<!-- <a href="#musicians"><button>Music</button></a>
 			<a href="#motioners"><button>Motion</button></a> -->
 			<select id="musicianFilter" type="dropdown">
-				<option value="">Instrument Played</option>
+				<option value="">All Musicians</option>
 				<option value="Guitar">Guitar</option>
 				<option value="Drums">Drums</option>
 				<option value="Vocals">Vocals</option>
